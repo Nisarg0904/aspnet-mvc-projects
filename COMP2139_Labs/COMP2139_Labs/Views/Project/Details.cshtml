@@ -1,0 +1,19 @@
+﻿@model Project
+@{
+    //razor block
+    ViewData["Title"] = "Project Details";
+
+
+}
+@{
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">@Model.ProjectId @Model.Name    </h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">@Model.Status</h6>
+    <p class="card-text">@Model.Description</p>
+    <button type="button" class="btn btn-primary" asp-controller="Project" asp-action="Edit" asp-route-id="">Edit</button>
+            <button type="button" class="btn btn-secondary" asp-controller="Project" asp-action="Index">Go back</button>
+
+  </div>
+</div>
+}

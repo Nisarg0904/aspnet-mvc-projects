@@ -1,0 +1,39 @@
+﻿@model List<Project>
+@{
+    //razor block
+    ViewData["Title"] = "Projects";
+
+
+}
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Describtion</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {  
+                <tr>
+                    <td>@item.ProjectId</td>
+                    <td><a asp-action="Details" >@item.Name</a></td>
+                    <td>@item.Description</td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+ 
+    
+}
+else
+{
+    <p>No Project Found!</p>
+}
