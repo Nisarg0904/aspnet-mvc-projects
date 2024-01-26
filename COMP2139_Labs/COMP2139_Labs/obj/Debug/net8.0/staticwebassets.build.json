@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EP0x0847uzzeXKi/vVTFL1Uj5s10fDvBovytQgS5SpY=",
+  "Hash": "obeBEvKEbZq/AC6v0YSIIeLYEp3XTuQrcllljSfNNFE=",
   "Source": "COMP2139_Labs",
   "BasePath": "_content/COMP2139_Labs",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\wwwroot\\lib\\myjwi9uj.png",
+      "SourceId": "COMP2139_Labs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\wwwroot\\",
+      "BasePath": "_content/COMP2139_Labs",
+      "RelativePath": "lib/myjwi9uj.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\myjwi9uj.png"
     }
   ]
 }

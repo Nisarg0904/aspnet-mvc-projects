@@ -13,6 +13,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Describtion</th>
+                <th></th>
 
             </tr>
 
@@ -22,14 +23,21 @@
             {  
                 <tr>
                     <td>@item.ProjectId</td>
-                    <td><a asp-action="Details" >@item.Name</a></td>
+                    <td>@item.Name</td>
                     <td>@item.Description</td>
+                    <td>
+                        <a asp-controller="Project" asp-action="Details" asp-route-id="@item.ProjectId" class="btn btn-light"><i class="fa-solid fa-info"></i></a>
+                        <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+
+
+                    </td>
 
                 </tr>
             }
 
         </tbody>
     </table>
+    <a asp-action="Create" method="post" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
  
     
 }

@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\wwwroot\\lib\\myjwi9uj.png",
+      "PackagePath": "staticwebassets\\lib\\myjwi9uj.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.COMP2139_Labs.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
