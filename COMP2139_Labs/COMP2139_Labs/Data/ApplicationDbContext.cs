@@ -8,6 +8,7 @@ namespace COMP2139_Labs.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<Project> projects { get; set; }
+        public DbSet<ProjectTask> tasks { get; set; }
 
 
 

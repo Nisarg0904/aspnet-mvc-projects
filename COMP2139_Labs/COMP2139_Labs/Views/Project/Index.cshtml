@@ -27,7 +27,7 @@
                     <td>@item.Description</td>
                     <td>
                         <a asp-controller="Project" asp-action="Details" asp-route-id="@item.ProjectId" class="btn btn-light"><i class="fa-solid fa-info"></i></a>
-                        <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        <a asp-controller="Project" asp-action="Delete" action="get" asp-route-id="@item.ProjectId" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
 
 
                     </td>
@@ -44,4 +44,6 @@
 else
 {
     <p>No Project Found!</p>
+    <a asp-action="Create" method="post" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+
 }
