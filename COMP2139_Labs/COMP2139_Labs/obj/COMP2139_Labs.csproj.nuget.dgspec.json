@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj": {}
+    "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\Assignment\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj": {
+    "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\Assignment\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj",
+        "projectUniqueName": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\Assignment\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj",
         "projectName": "COMP2139_Labs",
-        "projectPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj",
+        "projectPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\Assignment\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj",
         "packagesPath": "C:\\Users\\nisar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\obj\\",
+        "outputPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\Assignment\\COMP2139_Labs\\COMP2139_Labs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

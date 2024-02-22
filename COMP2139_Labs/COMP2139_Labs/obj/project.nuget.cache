@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eBYLpj3z8UwU3j2yEe+FSMkLG8HksDuS9q4UNEYXSxX6x7YMOgoFs9yjWI/sG/9OGuvgV3nC9Ucz5bA7Izfg9A==",
+  "dgSpecHash": "gjm1Ha1bHP/Jm3izJHXngdV31StG5S5c/JN9fCNW8PI7prW+fUkSP+ywltCETBWx6txeH32MhQ50htUo1mCd5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj",
+  "projectFilePath": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\Assignment\\COMP2139_Labs\\COMP2139_Labs\\COMP2139_Labs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nisar\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\nisar\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
