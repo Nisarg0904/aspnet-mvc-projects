@@ -1,30 +1,26 @@
 ﻿using Assignment.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Assignment.Controllers
 {
-    public class CarController : Controller
+    public class BookingController : Controller
     {
+
         private readonly ApplicationDbContext _context;
 
-        public CarController(ApplicationDbContext context)
+        public BookingController(ApplicationDbContext context)
         {
             _context = context;
         }
-
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
-  
-
 
         [HttpPost]
         public IActionResult Create()
         {
-       
+
             return RedirectToAction("Index");
         }
 
@@ -36,26 +32,26 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
-          
+
             return View();
         }
         [HttpGet]
         public IActionResult Delete(int id)
         {
-           
+
             return View();
         }
         [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-          
+
             return NotFound();
         }
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            
+
             return View();
         }
         [HttpPost]
@@ -64,6 +60,5 @@ namespace Assignment.Controllers
         {
             return View();
         }
-
     }
 }
