@@ -1,4 +1,5 @@
 ﻿using Assignment.Data;
+using Assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.Controllers
@@ -18,18 +19,45 @@ namespace Assignment.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create()
+        public IActionResult Create(Booking booking)
         {
+            if (ModelState.IsValid)
+            {
+                // add new booking
+                _context.bookings.Add(booking);
+               _context.SaveChanges();
+
+            }
 
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public IActionResult Create(int a)
+        public IActionResult Create()
         {
             return View();
         }
         [HttpGet]
+        public IActionResult CreateCar()
+        {
+            var cars= _context.cars.ToList();
+            return View(cars);
+        }
+        [HttpGet]
+        public IActionResult CreateFlight()
+        {
+            var flights = _context.flights.ToList();
+            return View(flights);
+        }
+        [HttpGet]
+        public IActionResult CreateHotel()
+        {
+            var hotels = _context.hotels.ToList();
+            return View(hotels);
+        }
+    
+        [HttpGet]
+        
         public IActionResult Details(int id)
         {
 
