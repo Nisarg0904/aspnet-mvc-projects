@@ -13,7 +13,7 @@ namespace Assignment.Models
         public required string location { get; set; }
         [Required]
         public double price { get; set; }
-     
+            
         [Required]
         public int numRooms { get; set;}
         public string? amenities { get; set; }
