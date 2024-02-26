@@ -16,10 +16,9 @@ namespace Assignment.Models
         public DateTime CheckOutDate { get; set; }
         [Required]
         public int NumRooms { get; set; }
+      
         [Required]
-        public int id { get; set; }
-        [Required]
-        public  Booking ? booking { get; set; }
+        public required Booking  booking { get; set; }
 
 
     }

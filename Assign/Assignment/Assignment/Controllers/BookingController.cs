@@ -43,12 +43,7 @@ namespace Assignment.Controllers
             var cars= _context.cars.ToList();
             return View(cars);
         }
-        [HttpGet]
-        public IActionResult CreateFlight()
-        {
-            var flights = _context.flights.ToList();
-            return View(flights);
-        }
+ 
         [HttpGet]
         public IActionResult CreateHotel()
         {

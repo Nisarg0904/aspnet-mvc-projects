@@ -1,0 +1,44 @@
+﻿@model List<Flight>
+
+@{
+    ViewData["Title"] = "Flight Booking";
+}
+
+<h2>Flight Booking</h2>
+
+<form asp-action="Create" method="get">
+    <div class="form-group">
+        <label for="departureCity">Departure City:</label>
+        <select class="form-control" id="departureCity" name="departureCity">
+            @foreach (var departureCity in Model.Select(f => f.departure).Distinct())
+            {
+                <option>@departureCity</option>
+            }
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="arrivalCity">Arrival City:</label>
+        <select class="form-control" id="arrivalCity" name="arrivalCity">
+            @foreach (var arrivalCity in Model.Select(f => f.arrival).Distinct())
+            {
+                <option>@arrivalCity</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" class="form-control" id="date" name="date" min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<div id="detailsSection" style="display: none;"></div>
+@section Scripts {
+
+}

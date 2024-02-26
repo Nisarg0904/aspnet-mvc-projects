@@ -10,9 +10,8 @@ namespace Assignment.Models
         public int flightId { get; set; }
         [Required]
         public required Flight flight { get; set; }
+
         [Required]
-        public int id { get; set; }
-        [Required]
-        public Booking? booking { get; set; }
+        public required Booking booking { get; set; }
     }
 }

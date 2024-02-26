@@ -4,6 +4,7 @@ using Assignment.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240226211904_DeleteSomething")]
+    partial class DeleteSomething
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,6 +98,9 @@ namespace Assignment.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("carId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
                         .HasColumnType("int");
 
                     b.HasKey("bId");
@@ -223,6 +229,9 @@ namespace Assignment.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("hotelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
                         .HasColumnType("int");
 
                     b.HasKey("bId");

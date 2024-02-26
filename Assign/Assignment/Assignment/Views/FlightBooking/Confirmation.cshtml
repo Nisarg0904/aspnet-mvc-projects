@@ -1,0 +1,23 @@
+﻿@model FlightBooking
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <h2>Booking Confirmation</h2>
+
+    <p>Booking ID: @Model.booking.id</p>
+    <p>Booking Date: @Model.booking.date.ToString("yyyy-MM-dd")</p>
+
+    <h3>Flight Details</h3>
+    <p>Departure City: @Model.flight.departure</p>
+    <p>Arrival City: @Model.flight.arrival</p>
+    <p>Departure Date & Time: @Model.flight.depTime.ToString("yyyy-MM-dd HH:mm")</p>
+    <p>Arrival Date & Time: @Model.flight.arrTime.ToString("yyyy-MM-dd HH:mm")</p>
+    <p>Price: $@Model.flight.price</p>
+
+    <!-- Other flight details... -->
+</body>
+</html>

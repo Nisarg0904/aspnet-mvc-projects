@@ -10,8 +10,7 @@ namespace Assignment.Models
         public int carId { get; set; }
         [Required]
         public required Car car { get; set; }
-        public int id { get; set; }
         [Required]
-        public Booking? booking { get; set; }
+        public required Booking booking { get; set; }
     }
 }
