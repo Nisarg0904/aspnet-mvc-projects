@@ -1,4 +1,5 @@
 ﻿using Assignment.Data;
+using Assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.Controllers
@@ -17,10 +18,17 @@ namespace Assignment.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create()
+        public IActionResult Create([Bind("departure", "arrival", "depTime", "arrTime", "airline", "price", "maxPassanger", "numPassanger = 0")]Flight flight )
         {
 
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.flights.Add(flight);
+                _context.SaveChanges();
+                return RedirectToAction("Index","Car");
+            }
+
+            return View();
         }
 
         [HttpGet]

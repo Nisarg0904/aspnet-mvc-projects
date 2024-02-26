@@ -1,4 +1,5 @@
 ﻿using Assignment.Data;
+using Assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Assignment.Controllers
@@ -17,10 +18,17 @@ namespace Assignment.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create()
+        public IActionResult Create([Bind("name", "city", "location", "price", "numRooms", "amenities")]Hotel hotel)
         {
 
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.hotels.Add(hotel);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "Car");
+            }
+
+            return View();
         }
 
         [HttpGet]

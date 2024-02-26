@@ -6,11 +6,14 @@ namespace Assignment.Models
     {
         [Key]
         public int id {  get; set; }
+        [Required]
+        public required string name { get; set; }
+        [Required]
+        public required string city {  get; set; }
         public required string location { get; set; }
         [Required]
         public double price { get; set; }
-        [Required]
-        public int maxRooms { get; set; }
+     
         [Required]
         public int numRooms { get; set;}
         public string? amenities { get; set; }

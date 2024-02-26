@@ -1,0 +1,62 @@
+﻿@model Hotel
+
+@{
+    // Razor Block
+    ViewData["Title"] = "Create Hotel";
+}
+
+<h2>Add Hotel</h2>
+
+
+
+<form asp-action="Create" method="post">
+    <!-- Display model-related validation errors here -->
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="name" class="control-label">Name</label>
+        <input asp-for="name" class="form-control" />
+        <span asp-validation-for="name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="city" class="control-label">City</label>
+        <input asp-for="city" class="form-control" />
+        <span asp-validation-for="city" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="location" class="control-label">Location</label>
+        <input asp-for="location" class="form-control" />
+        <span asp-validation-for="location" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="price" class="control-label">Price</label>
+        <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input asp-for="price" class="form-control" type="number" />
+        </div>
+        <span asp-validation-for="price" class="text-danger"></span>
+        <small class="text-muted">Price is per night</small>
+    </div>
+
+
+
+    <div class="form-group">
+        <label asp-for="numRooms" class="control-label">Available rooms</label>
+        <input asp-for="numRooms" class="form-control" type="number" />
+        <span asp-validation-for="numRooms" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="amenities" class="control-label">Amenities</label>
+        <input asp-for="amenities" class="form-control" />
+        <span asp-validation-for="amenities" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Add Hotel" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+    </div>
+</form>

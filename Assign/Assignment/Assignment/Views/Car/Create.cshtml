@@ -1,9 +1,67 @@
-﻿
+﻿@model Car  //specifies and empty project
+
+
+
 @{
-    <h1>Yoo ... Describtion!!</h1>
-    <h2>Create a a form to add a car </h2>
-    <h3>Look at the car model to get idea which properties you need from user</h3>
-    <h4>Some of them are default ..</h4>
-    <h5>Add butto will involke the post method from car controller...</h5>
-    <H6>Finally.</H6>
+    // Razor Block
+    ViewData["Title"] = "Create Car";
 }
+
+<h2>Add Car</h2>
+
+<form asp-action="Create" method="post">
+    <!-- Display model-related validation errors here -->
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="model" class="control-label"></label>
+        <input asp-for="model" class="form-control" />
+        <span asp-validation-for="model" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="type" class="control-label"></label>
+        <input asp-for="type" class="form-control" />
+        <span asp-validation-for="type" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="price" class="control-label"></label>
+        <div class="input-group">
+            <span class="input-group-addon">$ </span>
+            <input asp-for="price" class="form-control" type="number" />
+        </div>
+        <span asp-validation-for="price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="rentalCompanies" class="control-label"></label>
+        <input asp-for="rentalCompanies" class="form-control" />
+        <span asp-validation-for="rentalCompanies" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="location" class="control-label"></label>
+        <input asp-for="location" class="form-control" />
+        <span asp-validation-for="location" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="isAvailable" class="control-label"></label>
+        <input asp-for="isAvailable" type="checkbox" />
+        <span asp-validation-for="isAvailable" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="availableFrom" class="control-label"></label>
+        <input asp-for="availableFrom" class="form-control" type="datetime-local" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+        <span asp-validation-for="availableFrom" class="text-danger"></span>
+    </div>
+    <br />
+    <br />
+
+    <div class="form-group">
+        <input type="submit" value="Add Car" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+    </div>
+</form>

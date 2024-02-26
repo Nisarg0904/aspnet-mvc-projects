@@ -1,4 +1,5 @@
 ﻿using Assignment.Data;
+using Assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,10 +23,18 @@ namespace Assignment.Controllers
 
 
         [HttpPost]
-        public IActionResult Create()
+        public IActionResult Create([Bind("model","type","price", "rentalCompanies","location", "isAvailable", "availableFrom")] Car car)
         {
-       
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.cars.Add(car);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+
+
+            }
+
+            return View();
         }
 
         [HttpGet]
