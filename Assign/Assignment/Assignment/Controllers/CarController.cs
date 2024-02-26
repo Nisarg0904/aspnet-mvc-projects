@@ -12,6 +12,8 @@ namespace Assignment.Controllers
         public CarController(ApplicationDbContext context)
         {
             _context = context;
+            
+            
         }
 
         [HttpGet]
@@ -36,7 +38,7 @@ namespace Assignment.Controllers
 
             return View();
         }
-
+        
         [HttpGet]
         public IActionResult Create(int a)
         {

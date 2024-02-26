@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240226114415_updateOnHotelModel1")]
-    partial class updateOnHotelModel1
+    [Migration("20240226185649_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,17 +33,13 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int?>("carId")
-                        .HasColumnType("int");
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
 
                     b.Property<DateTime>("date")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("flightId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("hotelId")
-                        .HasColumnType("int");
 
                     b.Property<double>("price")
                         .HasColumnType("float");
@@ -53,15 +49,13 @@ namespace Assignment.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("carId");
-
-                    b.HasIndex("flightId");
-
-                    b.HasIndex("hotelId");
-
                     b.HasIndex("userId");
 
                     b.ToTable("bookings");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Booking");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Assignment.Models.Car", b =>
@@ -187,31 +181,91 @@ namespace Assignment.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
+                {
+                    b.HasBaseType("Assignment.Models.Booking");
+
+                    b.Property<int>("carId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("carId");
+
+                    b.HasDiscriminator().HasValue("CarBooking");
+                });
+
+            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
+                {
+                    b.HasBaseType("Assignment.Models.Booking");
+
+                    b.Property<int>("flightId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("flightId");
+
+                    b.HasDiscriminator().HasValue("FlightBooking");
+                });
+
+            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+                {
+                    b.HasBaseType("Assignment.Models.Booking");
+
+                    b.Property<DateTime>("CheckInDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CheckOutDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumRooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("hotelId")
+                        .HasColumnType("int");
+
+                    b.HasIndex("hotelId");
+
+                    b.HasDiscriminator().HasValue("HotelBooking");
+                });
+
             modelBuilder.Entity("Assignment.Models.Booking", b =>
                 {
-                    b.HasOne("Assignment.Models.Car", "car")
-                        .WithMany()
-                        .HasForeignKey("carId");
-
-                    b.HasOne("Assignment.Models.Flight", "flight")
-                        .WithMany()
-                        .HasForeignKey("flightId");
-
-                    b.HasOne("Assignment.Models.Hotel", "hotel")
-                        .WithMany()
-                        .HasForeignKey("hotelId");
-
                     b.HasOne("Assignment.Models.User", "user")
                         .WithMany()
                         .HasForeignKey("userId");
 
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Car", "car")
+                        .WithMany()
+                        .HasForeignKey("carId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("car");
+                });
+
+            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Flight", "flight")
+                        .WithMany()
+                        .HasForeignKey("flightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("flight");
+                });
+
+            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Hotel", "hotel")
+                        .WithMany()
+                        .HasForeignKey("hotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("hotel");
-
-                    b.Navigation("user");
                 });
 #pragma warning restore 612, 618
         }

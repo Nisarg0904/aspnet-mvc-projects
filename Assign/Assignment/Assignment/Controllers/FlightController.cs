@@ -20,6 +20,7 @@ namespace Assignment.Controllers
         [HttpPost]
         public IActionResult Create([Bind("departure", "arrival", "depTime", "arrTime", "airline", "price", "maxPassanger", "numPassanger = 0")]Flight flight )
         {
+            
 
             if (ModelState.IsValid)
             {

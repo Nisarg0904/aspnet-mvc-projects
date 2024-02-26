@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240222172902_Assign1Database")]
-    partial class Assign1Database
+    [Migration("20240226193318_AllModelsDone")]
+    partial class AllModelsDone
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,17 +33,8 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int?>("carId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("date")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("flightId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("hotelId")
-                        .HasColumnType("int");
 
                     b.Property<double>("price")
                         .HasColumnType("float");
@@ -52,12 +43,6 @@ namespace Assignment.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("id");
-
-                    b.HasIndex("carId");
-
-                    b.HasIndex("flightId");
-
-                    b.HasIndex("hotelId");
 
                     b.HasIndex("userId");
 
@@ -101,6 +86,32 @@ namespace Assignment.Migrations
                     b.ToTable("cars");
                 });
 
+            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("carId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("carId");
+
+                    b.ToTable("cBookings");
+                });
+
             modelBuilder.Entity("Assignment.Models.Flight", b =>
                 {
                     b.Property<int>("id")
@@ -140,6 +151,32 @@ namespace Assignment.Migrations
                     b.ToTable("flights");
                 });
 
+            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("flightId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("flightId");
+
+                    b.ToTable("fBookings");
+                });
+
             modelBuilder.Entity("Assignment.Models.Hotel", b =>
                 {
                     b.Property<int>("id")
@@ -151,12 +188,17 @@ namespace Assignment.Migrations
                     b.Property<string>("amenities")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("city")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("maxRooms")
-                        .HasColumnType("int");
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("numRooms")
                         .HasColumnType("int");
@@ -167,6 +209,41 @@ namespace Assignment.Migrations
                     b.HasKey("id");
 
                     b.ToTable("hotels");
+                });
+
+            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<DateTime>("CheckInDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CheckOutDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumRooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("hotelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("hotelId");
+
+                    b.ToTable("hBookings");
                 });
 
             modelBuilder.Entity("Assignment.Models.User", b =>
@@ -184,29 +261,68 @@ namespace Assignment.Migrations
 
             modelBuilder.Entity("Assignment.Models.Booking", b =>
                 {
-                    b.HasOne("Assignment.Models.Car", "car")
-                        .WithMany()
-                        .HasForeignKey("carId");
-
-                    b.HasOne("Assignment.Models.Flight", "flight")
-                        .WithMany()
-                        .HasForeignKey("flightId");
-
-                    b.HasOne("Assignment.Models.Hotel", "hotel")
-                        .WithMany()
-                        .HasForeignKey("hotelId");
-
                     b.HasOne("Assignment.Models.User", "user")
                         .WithMany()
                         .HasForeignKey("userId");
 
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Booking", "booking")
+                        .WithMany()
+                        .HasForeignKey("bookingid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Models.Car", "car")
+                        .WithMany()
+                        .HasForeignKey("carId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("booking");
+
                     b.Navigation("car");
+                });
+
+            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Booking", "booking")
+                        .WithMany()
+                        .HasForeignKey("bookingid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Models.Flight", "flight")
+                        .WithMany()
+                        .HasForeignKey("flightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("booking");
 
                     b.Navigation("flight");
+                });
+
+            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Booking", "booking")
+                        .WithMany()
+                        .HasForeignKey("bookingid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Models.Hotel", "hotel")
+                        .WithMany()
+                        .HasForeignKey("hotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("booking");
 
                     b.Navigation("hotel");
-
-                    b.Navigation("user");
                 });
 #pragma warning restore 612, 618
         }

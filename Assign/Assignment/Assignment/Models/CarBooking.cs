@@ -2,11 +2,16 @@
 
 namespace Assignment.Models
 {
-    public class CarBooking :Booking
+    public class CarBooking 
     {
+        [Key]
+        public int bId { get; set; }
         [Required]
-        public int Id { get; set; }
+        public int carId { get; set; }
         [Required]
         public required Car car { get; set; }
+        public int id { get; set; }
+        [Required]
+        public Booking? booking { get; set; }
     }
 }

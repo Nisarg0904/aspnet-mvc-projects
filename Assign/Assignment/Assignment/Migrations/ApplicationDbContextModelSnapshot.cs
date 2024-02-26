@@ -83,6 +83,32 @@ namespace Assignment.Migrations
                     b.ToTable("cars");
                 });
 
+            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("carId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("carId");
+
+                    b.ToTable("cBookings");
+                });
+
             modelBuilder.Entity("Assignment.Models.Flight", b =>
                 {
                     b.Property<int>("id")
@@ -122,6 +148,32 @@ namespace Assignment.Migrations
                     b.ToTable("flights");
                 });
 
+            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("flightId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("flightId");
+
+                    b.ToTable("fBookings");
+                });
+
             modelBuilder.Entity("Assignment.Models.Hotel", b =>
                 {
                     b.Property<int>("id")
@@ -156,6 +208,41 @@ namespace Assignment.Migrations
                     b.ToTable("hotels");
                 });
 
+            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<DateTime>("CheckInDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CheckOutDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumRooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("hotelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("id")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("hotelId");
+
+                    b.ToTable("hBookings");
+                });
+
             modelBuilder.Entity("Assignment.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -176,6 +263,63 @@ namespace Assignment.Migrations
                         .HasForeignKey("userId");
 
                     b.Navigation("user");
+                });
+
+            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Booking", "booking")
+                        .WithMany()
+                        .HasForeignKey("bookingid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Models.Car", "car")
+                        .WithMany()
+                        .HasForeignKey("carId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("booking");
+
+                    b.Navigation("car");
+                });
+
+            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Booking", "booking")
+                        .WithMany()
+                        .HasForeignKey("bookingid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Models.Flight", "flight")
+                        .WithMany()
+                        .HasForeignKey("flightId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("booking");
+
+                    b.Navigation("flight");
+                });
+
+            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+                {
+                    b.HasOne("Assignment.Models.Booking", "booking")
+                        .WithMany()
+                        .HasForeignKey("bookingid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Models.Hotel", "hotel")
+                        .WithMany()
+                        .HasForeignKey("hotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("booking");
+
+                    b.Navigation("hotel");
                 });
 #pragma warning restore 612, 618
         }

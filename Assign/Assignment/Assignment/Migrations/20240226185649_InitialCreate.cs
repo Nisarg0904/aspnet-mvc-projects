@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Assignment.Migrations
 {
     /// <inheritdoc />
-    public partial class Assign1Database : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -56,9 +56,10 @@ namespace Assignment.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    city = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     location = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     price = table.Column<double>(type: "float", nullable: false),
-                    maxRooms = table.Column<int>(type: "int", nullable: false),
                     numRooms = table.Column<int>(type: "int", nullable: false),
                     amenities = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -85,12 +86,16 @@ namespace Assignment.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    flightId = table.Column<int>(type: "int", nullable: true),
-                    carId = table.Column<int>(type: "int", nullable: true),
-                    hotelId = table.Column<int>(type: "int", nullable: true),
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     price = table.Column<double>(type: "float", nullable: false),
-                    userId = table.Column<int>(type: "int", nullable: true)
+                    userId = table.Column<int>(type: "int", nullable: true),
+                    Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
+                    carId = table.Column<int>(type: "int", nullable: true),
+                    flightId = table.Column<int>(type: "int", nullable: true),
+                    hotelId = table.Column<int>(type: "int", nullable: true),
+                    CheckInDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CheckOutDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    NumRooms = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -104,17 +109,20 @@ namespace Assignment.Migrations
                         name: "FK_bookings_cars_carId",
                         column: x => x.carId,
                         principalTable: "cars",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_bookings_flights_flightId",
                         column: x => x.flightId,
                         principalTable: "flights",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_bookings_hotels_hotelId",
                         column: x => x.hotelId,
                         principalTable: "hotels",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

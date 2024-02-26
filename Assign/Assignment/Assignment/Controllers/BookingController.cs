@@ -19,12 +19,12 @@ namespace Assignment.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Booking booking)
+        public IActionResult CreateFlightBooking([Bind( "Id","flight", "date = @DateTime.Now.ToString(\"yyyy-MM-ddTHH:mm\")","price")]FlightBooking fBooking)
         {
             if (ModelState.IsValid)
             {
                 // add new booking
-                _context.bookings.Add(booking);
+                _context.fBookings.Add(fBooking);
                _context.SaveChanges();
 
             }

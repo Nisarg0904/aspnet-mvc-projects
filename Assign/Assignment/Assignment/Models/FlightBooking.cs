@@ -2,11 +2,17 @@
 
 namespace Assignment.Models
 {
-    public class FlightBookingv: Booking
+    public class FlightBooking 
     {
+        [Key]
+        public int bId { get; set; }
         [Required]
-        public int Id { get; set; }
+        public int flightId { get; set; }
         [Required]
         public required Flight flight { get; set; }
+        [Required]
+        public int id { get; set; }
+        [Required]
+        public Booking? booking { get; set; }
     }
 }
