@@ -9,63 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Assignment
 build_property.RootNamespace = Assignment
-build_property.ProjectDir = C:\Users\danie\Source\Repos\COMP2139-Winter2024-101410311\Assign\Assignment\Assignment\
+build_property.ProjectDir = C:\Users\nisar\OneDrive\Desktop\Assignment1\Assign\Assignment\Assignment\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\danie\Source\Repos\COMP2139-Winter2024-101410311\Assign\Assignment\Assignment
+build_property.MSBuildProjectDirectory = C:\Users\nisar\OneDrive\Desktop\Assignment1\Assign\Assignment\Assignment
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Booking/Create.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Booking/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Booking/CreateCar.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Booking/CreateCar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGVDYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Booking/Details.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Booking/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Booking/Index.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Car/Create.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Car/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Car/Index.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Car/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Home/Index.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Home/Privacy.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Shared/Error.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/_ViewImports.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/_ViewStart.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Source/Repos/COMP2139-Winter2024-101410311/Assign/Assignment/Assignment/Views/Shared/_Layout.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/Assignment1/Assign/Assignment/Assignment/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-y18fyt0aqx
