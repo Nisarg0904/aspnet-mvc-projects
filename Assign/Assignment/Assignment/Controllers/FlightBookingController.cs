@@ -22,7 +22,7 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Create(string departureCity, string arrivalCity, DateTime date) {
             var filteredFlights = _context.flights
-            .Where(f => f.departure == departureCity && f.arrival == arrivalCity && f.depTime.Date == date.Date)
+            .Where(f => f.departure == departureCity && f.arrival == arrivalCity && f.depTime.Date == date.Date && f.numPassanger<f.maxPassanger)
             .ToList();
 
             // Pass the filtered list of flights to the view

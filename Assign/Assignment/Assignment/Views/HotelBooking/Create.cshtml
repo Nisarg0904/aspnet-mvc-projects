@@ -1,0 +1,44 @@
+﻿@model List<Hotel>
+
+@{
+    ViewData["Title"] = "List of Hotels";
+}
+
+<h2>List of Hotels</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>Amenities</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hotel in Model)
+            {
+                <tr>
+                    <td>@hotel.name</td>
+                    <td>@hotel.city</td>
+                    <td>@hotel.location</td>
+                    <td>$@hotel.price</td>
+                    <td>@hotel.amenities</td>
+                    <td>
+                        <form asp-action="ConfirmCreate" asp-route-hotelId="@hotel.id">
+                            <button type="submit" class="btn btn-primary">Book It</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hotels available.</p>
+}
