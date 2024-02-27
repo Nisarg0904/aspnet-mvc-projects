@@ -88,14 +88,7 @@ namespace Assignment.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     price = table.Column<double>(type: "float", nullable: false),
-                    userId = table.Column<int>(type: "int", nullable: true),
-                    Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
-                    carId = table.Column<int>(type: "int", nullable: true),
-                    flightId = table.Column<int>(type: "int", nullable: true),
-                    hotelId = table.Column<int>(type: "int", nullable: true),
-                    CheckInDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CheckOutDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    NumRooms = table.Column<int>(type: "int", nullable: true)
+                    userId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -105,20 +98,85 @@ namespace Assignment.Migrations
                         column: x => x.userId,
                         principalTable: "User",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "cBookings",
+                columns: table => new
+                {
+                    bId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    carId = table.Column<int>(type: "int", nullable: false),
+                    bookedFrom = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    bookedTo = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    bookingid = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_cBookings", x => x.bId);
                     table.ForeignKey(
-                        name: "FK_bookings_cars_carId",
+                        name: "FK_cBookings_bookings_bookingid",
+                        column: x => x.bookingid,
+                        principalTable: "bookings",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_cBookings_cars_carId",
                         column: x => x.carId,
                         principalTable: "cars",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "fBookings",
+                columns: table => new
+                {
+                    bId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    flightId = table.Column<int>(type: "int", nullable: false),
+                    bookingid = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_fBookings", x => x.bId);
                     table.ForeignKey(
-                        name: "FK_bookings_flights_flightId",
+                        name: "FK_fBookings_bookings_bookingid",
+                        column: x => x.bookingid,
+                        principalTable: "bookings",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_fBookings_flights_flightId",
                         column: x => x.flightId,
                         principalTable: "flights",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "hBookings",
+                columns: table => new
+                {
+                    bId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    hotelId = table.Column<int>(type: "int", nullable: false),
+                    CheckInDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CheckOutDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    NumRooms = table.Column<int>(type: "int", nullable: false),
+                    bookingid = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_hBookings", x => x.bId);
                     table.ForeignKey(
-                        name: "FK_bookings_hotels_hotelId",
+                        name: "FK_hBookings_bookings_bookingid",
+                        column: x => x.bookingid,
+                        principalTable: "bookings",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_hBookings_hotels_hotelId",
                         column: x => x.hotelId,
                         principalTable: "hotels",
                         principalColumn: "id",
@@ -126,34 +184,52 @@ namespace Assignment.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_bookings_carId",
-                table: "bookings",
-                column: "carId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_bookings_flightId",
-                table: "bookings",
-                column: "flightId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_bookings_hotelId",
-                table: "bookings",
-                column: "hotelId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_bookings_userId",
                 table: "bookings",
                 column: "userId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_cBookings_bookingid",
+                table: "cBookings",
+                column: "bookingid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_cBookings_carId",
+                table: "cBookings",
+                column: "carId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_fBookings_bookingid",
+                table: "fBookings",
+                column: "bookingid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_fBookings_flightId",
+                table: "fBookings",
+                column: "flightId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_hBookings_bookingid",
+                table: "hBookings",
+                column: "bookingid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_hBookings_hotelId",
+                table: "hBookings",
+                column: "hotelId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "bookings");
+                name: "cBookings");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "fBookings");
+
+            migrationBuilder.DropTable(
+                name: "hBookings");
 
             migrationBuilder.DropTable(
                 name: "cars");
@@ -162,7 +238,13 @@ namespace Assignment.Migrations
                 name: "flights");
 
             migrationBuilder.DropTable(
+                name: "bookings");
+
+            migrationBuilder.DropTable(
                 name: "hotels");
+
+            migrationBuilder.DropTable(
+                name: "User");
         }
     }
 }

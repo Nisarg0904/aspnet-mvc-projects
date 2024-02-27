@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240226213042_change")]
-    partial class change
+    [Migration("20240227192024_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,6 +93,12 @@ namespace Assignment.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<DateTime>("bookedFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("bookedTo")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("bookingid")
                         .HasColumnType("int");
