@@ -1,7 +1,19 @@
 ﻿
 @{
-    <a  asp-action="CreateCar" method="get" class="btn btn-primary">Car</a>
-    <a asp-controller="FlightBooking" asp-action="Index" method="get" class="btn btn-primary">Flight</a>
-    <a asp-controller="HotelBooking" asp-action="Index" method="get" class="btn btn-primary">Hotel</a>
-
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="text-center">
+            <a asp-action="CreateCar" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 150px; margin-right: 45px;">
+                <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">🚗</div>
+                <div class="small">Car</div>
+            </a>
+            <a asp-controller="FlightBooking" asp-action="Index" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 150px; margin-right: 45px;">
+                <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">✈️</div>
+                <div class="small">Flight</div>
+            </a>
+            <a asp-controller="HotelBooking" asp-action="Index" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 150px;">
+                <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">🏨</div>
+                <div class="small">Hotel</div>
+            </a>
+        </div>
+    </div>
 }

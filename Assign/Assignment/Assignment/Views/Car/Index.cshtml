@@ -2,20 +2,51 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    <a asp-controller="Car" asp-action="Create" method="get" class="btn btn-primary">Create Car</a>
-    <a asp-controller="Car" asp-action="Detail" method="get" class="btn btn-primary">Browse Car</a>
-    <br />
-        <br />
-    <br />
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="text-center">
+            <div class="mb-3 d-flex align-items-center">
+                <a asp-controller="Car" asp-action="Create" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 200px; margin-right: 10px;">
+                    <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">🚗</div>
+                    <div class="small">Create Car</div>
+                </a>
+                <a asp-controller="Car" asp-action="Detail" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 200px;">
+                    <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">🔍</div>
+                    <div class="small">Browse Car</div>
+                </a>
+            </div>
+            <div class="black-line"></div>
 
-    <a asp-controller="Flight" asp-action="Create" method="get" class="btn btn-primary">Create Flight</a>
-    <a asp-controller="Flight" asp-action="Detail" method="get" class="btn btn-primary">Brows Flight</a>
-    <br />
-        <br />
+            <div class="mb-3 d-flex align-items-center">
+                <a asp-controller="Flight" asp-action="Create" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 200px; margin-right: 10px;">
+                    <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">✈️</div>
+                    <div class="small">Create Flight</div>
+                </a>
+                <a asp-controller="Flight" asp-action="Detail" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 200px;">
+                    <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">🔍</div>
+                    <div class="small">Browse Flight</div>
+                </a>
+            </div>
+            <div class="black-line"></div>
 
-    <br />
+            <div class="d-flex align-items-center">
+                <a asp-controller="Hotel" asp-action="Create" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 200px; margin-right: 10px;">
+                    <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">🏨</div>
+                    <div class="small">Create Hotel</div>
+                </a>
+                <a asp-controller="Hotel" asp-action="Detail" method="get" class="btn btn-primary" style="font-size: 2.5rem; padding: 10px; width: 200px;">
+                    <div style="background-color: white; display: inline-block; padding: 5px; border-radius: 50%;">🔍</div>
+                    <div class="small">Browse Hotel</div>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <a asp-controller="Hotel" asp-action="Create" method="get" class="btn btn-primary">Create Hotel</a>
-    <a asp-controller="Hotel" asp-action="Detail" method="get" class="btn btn-primary">Brows Hotel</a>
-
+    <style>
+        .black-line {
+            flex-grow: 1;
+            height: 2px;
+            background-color: black;
+            margin: 10px -10px;
+        }
+    </style>
 }

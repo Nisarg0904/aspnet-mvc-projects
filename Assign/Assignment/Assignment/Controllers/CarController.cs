@@ -19,12 +19,14 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var cars = _context.cars.ToList();
+            return View(cars);
         }
   
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("model","type","price", "rentalCompanies","location", "isAvailable", "availableFrom")] Car car)
         {
             if (ModelState.IsValid)
