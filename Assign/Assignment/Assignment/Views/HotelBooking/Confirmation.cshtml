@@ -1,0 +1,25 @@
+﻿@model HotelBooking
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <h2>Booking Confirmation</h2>
+
+    <p>Booking ID: @Model.booking.id</p>
+    <p>Booking Date: @Model.booking.date.ToString("yyyy-MM-dd")</p>
+
+    <h3>Hotel Details</h3>
+    <p>Hotel Name: @Model.hotel.name</p>
+    <p>City: @Model.hotel.city</p>
+    <p>Location: @Model.hotel.location</p>
+    <p>Check-in Date: @Model.CheckInDate.ToString("yyyy-MM-dd")</p>
+    <p>Check-out Date: @Model.CheckOutDate.ToString("yyyy-MM-dd")</p>
+    <p>Price: $@Model.booking.price</p>
+    <p>Number Of Rooms:@Model.NumRooms </p>
+
+    <!-- Other hotel details... -->
+</body>
+</html>

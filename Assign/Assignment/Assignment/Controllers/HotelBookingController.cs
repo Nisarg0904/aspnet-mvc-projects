@@ -1,4 +1,5 @@
 ﻿using Assignment.Data;
+using Assignment.Models;
 using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -28,11 +29,52 @@ namespace Assignment.Controllers
 
         }
         [HttpGet]
-        public IActionResult ConfirmCreate(int hotelId)
+        public IActionResult ConfirmCreate(int hotelId, string msg)
         {
 
-            var hotel = _context.hotels.Where(h => h.id == hotelId).ToList();
-            return View(hotel);
+            if (msg != null)
+            {
+                
+            }
+                var hotel = _context.hotels.Where(h => h.id == hotelId).ToList();
+                return View(hotel);
+            
+        }
+        [HttpGet]
+        public IActionResult Confirmation(int hotelId,int numberOfRooms,DateTime checkInDate, DateTime checkOutDate) 
+        {
+            var hotel= _context.hotels.FirstOrDefault(h => h.id==hotelId);
+            if (hotel == null)
+            {
+                return NotFound();
+            }
+
+            var booking = new Booking
+            {
+                date = DateTime.Today,
+                price = hotel.price * numberOfRooms * (checkOutDate-checkInDate).Days,
+            };
+            _context.bookings.Add(booking);
+            _context.SaveChanges();
+
+            var hotelBooking= new HotelBooking
+            {
+                hotelId= hotelId,
+                booking = booking,
+                hotel=hotel,
+                CheckInDate = checkInDate,
+                CheckOutDate = checkOutDate,
+                NumRooms = numberOfRooms,
+            };
+            _context.hBookings.Add(hotelBooking);
+
+            hotel.numRooms = hotel.numRooms - numberOfRooms;
+
+            _context.SaveChanges();
+
+
+            return View(hotelBooking);
+
         }
     }
 }

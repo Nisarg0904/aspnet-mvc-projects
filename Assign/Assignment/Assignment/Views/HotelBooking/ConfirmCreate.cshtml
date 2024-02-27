@@ -24,9 +24,20 @@
             <form method="get" asp-action="Confirmation" asp-controller="HotelBooking">
                 <input type="hidden" name="hotelId" value="@hotel.id" />
                 <div class="form-group">
-                    <label for="numberOfRooms">Number of Rooms:</label>
-                    <input type="number" class="form-control" id="numberOfRooms" name="numberOfRooms" required />
+                    <label for="checkInDate">Check-in Date:</label>
+                    <input type="date" class="form-control" id="checkInDate" name="checkInDate" min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" required />
                 </div>
+
+                <div class="form-group">
+                    <label for="checkOutDate">Check-out Date:</label>
+                    <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" min="@DateTime.Now.AddDays(2).ToString("yyyy-MM-dd")" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="numberOfRooms">Number of Rooms:</label>
+                    <input type="number" class="form-control" id="numberOfRooms" name="numberOfRooms" min="0" max="@hotel.numRooms" required />
+                </div>
+                <br />
                 <button type="submit" class="btn btn-primary">Confirm Booking</button>
             </form>
         </div>
