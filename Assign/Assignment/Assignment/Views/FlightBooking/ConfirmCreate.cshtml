@@ -49,13 +49,19 @@
 
                     <form asp-action="Confirmation" asp-route-flightId="@flight.id">
                         <button type="submit" class="btn btn-primary">Book It</button>
+                        <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
                     </form>
                 </div>
             }
+
         }
         else
         {
             <p>No flights available.</p>
+            <br />
+            <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
         }
 
         <a href="#" class="back-button">Back</a>

@@ -38,8 +38,13 @@
             }
         </tbody>
     </table>
+    <br />
+    <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
 }
 else
 {
     <p>No hotels available.</p>
+    <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
 }

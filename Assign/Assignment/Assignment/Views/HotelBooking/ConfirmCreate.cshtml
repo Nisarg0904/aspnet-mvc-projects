@@ -39,11 +39,17 @@
                 </div>
                 <br />
                 <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
             </form>
         </div>
     }
+
 }
 else
 {
     <p>No hotel selected.</p>
+    <br />
+    <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
 }

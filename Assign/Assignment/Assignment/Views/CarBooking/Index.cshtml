@@ -6,14 +6,16 @@
     <title>Car Search</title>
 </head>
 <body>
-    <form asp-action="Create" method="get">
-        <div class="form-group">
-            <label for="City">City:</label>
-            <select class="form-control" id="City" name="City">
-                @foreach (var City in Model.Select(c => c.location).Distinct())
-                {
-                    <option value="@City">@City</option>
-                }
+    @if (@Model.Any())
+    {
+        <form asp-action="Create" method="get">
+            <div class="form-group">
+                <label for="City">City:</label>
+                <select class="form-control" id="City" name="City">
+                    @foreach (var City in Model.Select(c => c.location).Distinct())
+                    {
+                        <option value="@City">@City</option>
+                    }
             </select>
         </div>
         <div class="form-group">
@@ -24,6 +26,18 @@
         <br />
 
         <button type="submit" class="btn btn-primary">Search</button>
-    </form>
+            <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
+        </form>
+    }
+    else
+    {
+        <p>NO Cras Avilable</p>
+        <br />
+        <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
+    }
+
+
 </body>
 </html>

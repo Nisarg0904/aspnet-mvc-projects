@@ -39,9 +39,16 @@
             }
         </tbody>
     </table>
+    <br />
+
+    <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
 }
 else
 {
     <p>No flights available.</p>
+    <br />
+    <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
 }
 
