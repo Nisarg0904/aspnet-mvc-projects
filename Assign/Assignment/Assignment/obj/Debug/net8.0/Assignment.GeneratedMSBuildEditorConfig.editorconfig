@@ -22,16 +22,28 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/CreateCar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGVDYXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/CarBooking/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyQm9va2luZ1xDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/CarBooking/ConfirmCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyQm9va2luZ1xDb25maXJtQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/CarBooking/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyQm9va2luZ1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/CarBooking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Car/Create.cshtml]
@@ -68,6 +80,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/HotelBooking/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxCb29raW5nXENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/HotelBooking/ConfirmCreate.cshtml]

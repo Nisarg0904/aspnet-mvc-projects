@@ -29,13 +29,10 @@ namespace Assignment.Controllers
 
         }
         [HttpGet]
-        public IActionResult ConfirmCreate(int hotelId, string msg)
+        public IActionResult ConfirmCreate(int hotelId)
         {
 
-            if (msg != null)
-            {
-                
-            }
+     
                 var hotel = _context.hotels.Where(h => h.id == hotelId).ToList();
                 return View(hotel);
             

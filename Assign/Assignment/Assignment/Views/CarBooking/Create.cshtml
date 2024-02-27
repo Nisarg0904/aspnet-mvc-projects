@@ -1,0 +1,45 @@
+﻿@model List<Car>
+
+@{
+    ViewData["Title"] = "List of Cars";
+}
+
+<h2>List of Cars</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Rental Company</th>
+                <th>Location</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <td>@car.model</td>
+                    <td>@car.type</td>
+                    <td>$@car.price</td>
+                    <td>@car.rentalCompanies</td>
+                    <td>@car.location</td>
+                    <td>
+                        <form method="get" asp-controller="CarBooking" asp-action="ConfirmCreate">
+                            <input type="hidden" name="carId" value="@car.id" />
+                            <button type="submit" class="btn btn-primary">Book It</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No cars available.</p>
+}

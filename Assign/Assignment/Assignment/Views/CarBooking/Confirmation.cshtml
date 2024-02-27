@@ -1,0 +1,24 @@
+﻿@model CarBooking
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    <h2>Booking Confirmation</h2>
+
+    <p>Booking ID: @Model.booking.id</p>
+    <p>Booking Date: @Model.booking.date.ToString("yyyy-MM-dd")</p>
+
+    <h3>Car Details</h3>
+    <p>Car Model: @Model.car.model</p>
+    <p>Type: @Model.car.type</p>
+    <p>Price: $@Model.booking.price</p>
+    <p>Rental Company: @Model.car.rentalCompanies</p>
+    <p>Location: @Model.car.location</p>
+    <p>Pickup Date: @Model.bookedFrom.ToString("yyyy-MM-dd")</p>
+    <p>Return Date: @Model.bookedTo.ToString("yyyy-MM-dd")</p>
+
+</body>
+</html>

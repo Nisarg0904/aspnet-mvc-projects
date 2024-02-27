@@ -1,0 +1,29 @@
+﻿@model List<Car>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Search</title>
+</head>
+<body>
+    <form asp-action="Create" method="get">
+        <div class="form-group">
+            <label for="City">City:</label>
+            <select class="form-control" id="City" name="City">
+                @foreach (var City in Model.Select(c => c.location).Distinct())
+                {
+                    <option value="@City">@City</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date" name="date" min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
+        </div>
+
+        <br />
+
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</body>
+</html>
