@@ -29,7 +29,7 @@
                     <td>$@hotel.price</td>
                     <td>@hotel.amenities</td>
                     <td>
-                        <form asp-action="ConfirmCreate" asp-route-hotelId="@hotel.id">
+                        <form asp-controller="HotelBooking" asp-action="ConfirmCreate" asp-route-hotelId="@hotel.id">
                             <button type="submit" class="btn btn-primary">Book It</button>
                         </form>
                     </td>
