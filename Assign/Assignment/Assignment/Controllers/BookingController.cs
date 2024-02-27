@@ -118,6 +118,7 @@ namespace Assignment.Controllers
             var cBooking = _context.cBookings.Find(carBooking.bId);
             if(booking != null && cBooking != null)
             {
+                carBooking.car.isAvailable= true;
                 _context.bookings.Remove(booking);
                 _context.cBookings.Remove(carBooking);
                 _context.SaveChanges();
@@ -148,6 +149,7 @@ namespace Assignment.Controllers
             var hBooking = _context.hBookings.Find(hotelBooking.bId);
             if (booking != null && hBooking != null)
             {
+                hotelBooking.hotel.numRooms = hotelBooking.hotel.numRooms + hotelBooking.NumRooms;
                 _context.bookings.Remove(booking);
                 _context.hBookings.Remove(hBooking);
                 _context.SaveChanges();
@@ -177,6 +179,7 @@ namespace Assignment.Controllers
             var fBooking = _context.fBookings.Find(flightBooking.bId);
             if (booking != null && fBooking != null)
             {
+                flightBooking.flight.numPassanger--;
                 _context.bookings.Remove(booking);
                 _context.fBookings.Remove(fBooking);
                 _context.SaveChanges();

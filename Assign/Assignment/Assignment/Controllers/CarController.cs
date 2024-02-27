@@ -19,8 +19,7 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var cars = _context.cars.ToList();
-            return View(cars);
+            return View();
         }
   
 
@@ -49,14 +48,24 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
-          
-            return View();
+            var cars= _context.cars.ToList();
+            return View(cars);
         }
-        [HttpGet]
-        public IActionResult Delete(int id)
+        [HttpPost]
+        public IActionResult DeleteCar(int id)
         {
+            var car= _context.cars.Find(id);
+            if(car == null) return NotFound();
+            var booking = _context.cBookings.Where(c => c.carId == id);
+            if (booking.Any())
+            {
+                return View("BookingAssociatedError");
+            }
+            _context.cars.Remove(car);
+            _context.SaveChanges();
+        
            
-            return View();
+            return RedirectToAction("Index","Car");
         }
         [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]

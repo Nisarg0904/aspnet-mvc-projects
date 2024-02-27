@@ -40,21 +40,27 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
+            var flights = _context.flights.ToList();
 
-            return View();
+            return View(flights);
         }
-        [HttpGet]
-        public IActionResult Delete(int id)
+
+        [HttpPost]
+        public IActionResult DeleteFlight(int id)
         {
 
-            return View();
-        }
-        [HttpPost, ActionName("DeleteConfirmed")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
-        {
+            var flight = _context.flights.Find(id);
+            if (flight == null) return NotFound();
+            var booking = _context.fBookings.Where(f => f.flightId == id);
+            if (booking.Any())
+            {
+                return View("BookingAssociatedError");
+            }
+            _context.flights.Remove(flight);
+            _context.SaveChanges();
 
-            return NotFound();
+
+            return RedirectToAction("Index", "Car");
         }
         [HttpGet]
         public IActionResult Edit(int id)

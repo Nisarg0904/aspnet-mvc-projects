@@ -34,17 +34,32 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Create(int a)
         {
+            
             return View();
         }
         [HttpGet]
         public IActionResult Details(int id)
         {
+            var hotels=_context.hotels.ToList();
 
-            return View();
+            return View(hotels);
         }
-        [HttpGet]
-        public IActionResult Delete(int id)
+        [HttpPost]
+        public IActionResult DeleteHotel(int id)
         {
+
+            var hotel = _context.hotels.Find(id);
+            if (hotel == null) return NotFound();
+            var booking = _context.hBookings.Where(h => h.hotelId == id);
+            if (booking.Any())
+            {
+                return View("BookingAssociatedError");
+            }
+            _context.hotels.Remove(hotel);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("Index", "Car");
 
             return View();
         }

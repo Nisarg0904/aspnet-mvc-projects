@@ -62,8 +62,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyQm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Car/BookingAssociatedError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEJvb2tpbmdBc3NvY2lhdGVkRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Car/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Car/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Car/Index.cshtml]
@@ -86,8 +94,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0Qm9va2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Flight/BookingAssociatedError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XEJvb2tpbmdBc3NvY2lhdGVkRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Flight/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Flight/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Home/Index.cshtml]
@@ -114,8 +130,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxCb29raW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Hotel/BookingAssociatedError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcQm9va2luZ0Fzc29jaWF0ZWRFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Hotel/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Hotel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Shared/Error.cshtml]
