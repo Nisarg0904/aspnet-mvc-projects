@@ -38,7 +38,7 @@
                         <td>@(car.isAvailable ? "Yes" : "No")</td>
                         <td>@(car.availableFrom.ToString("yyyy-MM-dd HH:mm") )</td>
                         <td>
-                            <a class="btn btn-primary" href="@Url.Action("EditCar", "YourControllerName", new { id = car.id })">Edit</a>
+                            <a class="btn btn-primary" href="@Url.Action("Edit", "Car", new { id = car.id })">Edit</a>
                         </td>
                         <td>
                             <form asp-action="DeleteCar" asp-controller="Car" method="post" onsubmit="return confirm('Are you sure you want to delete this car?');">

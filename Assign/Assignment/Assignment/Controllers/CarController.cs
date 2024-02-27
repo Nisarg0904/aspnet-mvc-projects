@@ -67,25 +67,34 @@ namespace Assignment.Controllers
            
             return RedirectToAction("Index","Car");
         }
-        [HttpPost, ActionName("DeleteConfirmed")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
-        {
-          
-            return NotFound();
-        }
+    
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            
-            return View();
+            var car = _context.cars.Find(id);
+            if (car == null) return NotFound();
+
+
+            return View(car);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit()
+        public IActionResult EditCar(Car car)
         {
-            return View();
+      
+            if (ModelState.IsValid)
+            {
+                // Update the car details in the database
+                _context.cars.Update(car);
+                _context.SaveChanges();
+
+                return RedirectToAction("Details", "Car"); // Redirect to the car list page
+            }
+
+            // If model state is not valid, redisplay the form with validation errors
+            return View(car);
         }
+
 
     }
 }

@@ -65,14 +65,29 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            var flight = _context.flights.Find(id);
+            if (flight == null) return NotFound();
 
-            return View();
+
+            return View(flight);
+
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit()
+        public IActionResult Edit(Flight flight)
         {
-            return View();
+
+            if (ModelState.IsValid)
+            {
+                // Update the hotel details in the database
+                _context.flights.Update(flight);
+                _context.SaveChanges();
+
+                return RedirectToAction("Details", "Flight"); // Redirect to the hotel list page
+            }
+
+            // If model state is not valid, redisplay the form with validation errors
+            return View(flight);
         }
 
     }

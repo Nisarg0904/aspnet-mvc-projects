@@ -71,6 +71,7 @@ namespace Assignment.Controllers
             return NotFound();
         }
         [HttpGet]
+
         public IActionResult Edit(int id)
         {
             var hotel=_context.hotels.Find(id);

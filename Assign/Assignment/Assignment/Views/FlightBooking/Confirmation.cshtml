@@ -17,6 +17,8 @@
     <p>Departure Date & Time: @Model.flight.depTime.ToString("yyyy-MM-dd HH:mm")</p>
     <p>Arrival Date & Time: @Model.flight.arrTime.ToString("yyyy-MM-dd HH:mm")</p>
     <p>Price: $@Model.flight.price</p>
+    <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Done</a>
+
 
     <!-- Other flight details... -->
 </body>
