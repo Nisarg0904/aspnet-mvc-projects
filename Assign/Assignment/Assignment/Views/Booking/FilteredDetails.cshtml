@@ -1,0 +1,83 @@
+﻿@model object
+
+@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+    @if (Model != null)
+    {
+
+        @if (Model is CarBooking)
+        {
+            var carBooking = Model as CarBooking;
+            <h2>Booking Confirmation</h2>
+
+            <p>Booking ID: @carBooking.booking.id</p>
+            <p>Booking Date: @carBooking.booking.date.ToString("yyyy-MM-dd")</p>
+
+            <h3>Car Details</h3>
+            <p>Car Model: @carBooking.car.model</p>
+            <p>Type: @carBooking.car.type</p>
+            <p>Price: $@carBooking.booking.price</p>
+            <p>Rental Company: @carBooking.car.rentalCompanies</p>
+            <p>Location: @carBooking.car.location</p>
+            <p>Pickup Date: @carBooking.bookedFrom.ToString("yyyy-MM-dd")</p>
+            <p>Return Date: @carBooking.bookedTo.ToString("yyyy-MM-dd")</p>
+            <form asp-action="DeleteCarBooking" asp-controller="Booking" method="get" style="display: inline;">
+                <input type="hidden" name="bookingId" value="@carBooking.booking.id" />
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        }
+        else if (Model is FlightBooking)
+        {
+            var flightBooking = Model as FlightBooking;
+            <p>Booking ID: @flightBooking.booking.id</p>
+            <p>Booking Date: @flightBooking.booking.date.ToString("yyyy-MM-dd")</p>
+
+            <h3>Flight Details</h3>
+            <p>Departure City: @flightBooking.flight.departure</p>
+            <p>Arrival City: @flightBooking.flight.arrival</p>
+            <p>Departure Date & Time: @flightBooking.flight.depTime.ToString("yyyy-MM-dd HH:mm")</p>
+            <p>Arrival Date & Time: @flightBooking.flight.arrTime.ToString("yyyy-MM-dd HH:mm")</p>
+            <p>Price: $@flightBooking.flight.price</p>
+            <form asp-action="DeleteFlightBooking" asp-controller="Booking" method="get" style="display: inline;">
+                <input type="hidden" name="bookingId" value="@flightBooking.booking.id" />
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
+        }
+        else if (Model is HotelBooking)
+        {
+            var hotelBooking = Model as HotelBooking;
+            <p>Booking ID: @hotelBooking.booking.id</p>
+            <p>Booking Date: @hotelBooking.booking.date.ToString("yyyy-MM-dd")</p>
+            <h3>Hotel Details</h3>
+            <p>Hotel Name: @hotelBooking.hotel.name</p>
+            <p>City: @hotelBooking.hotel.city</p>
+            <p>Location: @hotelBooking.hotel.location</p>
+            <p>Check-in Date: @hotelBooking.CheckInDate.ToString("yyyy-MM-dd")</p>
+            <p>Check-out Date: @hotelBooking.CheckOutDate.ToString("yyyy-MM-dd")</p>
+            <p>Price: $@hotelBooking.booking.price</p>
+            <p>Number Of Rooms:@hotelBooking.NumRooms </p>
+            <form asp-action="DeleteHotelBooking" asp-controller="Booking" method="get" style="display: inline;">
+                <input type="hidden" name="bookingId" value="@hotelBooking.booking.id" />
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+
+        }
+        <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
+      
+    }
+    else
+    {
+        <p>No booking details found.</p>
+    }
+</body>
+</html>
+

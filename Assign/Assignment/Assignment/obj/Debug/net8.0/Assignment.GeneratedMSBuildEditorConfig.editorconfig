@@ -22,8 +22,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/DeleteCarBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZWxldGVDYXJCb29raW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/DeleteFlightBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZWxldGVGbGlnaHRCb29raW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/DeleteHotelBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZWxldGVIb3RlbEJvb2tpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/FilteredDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xGaWx0ZXJlZERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Assignment/Assign/Assignment/Assignment/Views/Booking/Index.cshtml]

@@ -1,10 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    <h1>We will put an input box here to eneter booking id and a button to search that id.</h1>
-    <h2> Once they click on it we will reload this page with the help of java script using dom manupilation. </h2>
-    <h3> we will display the details down here and will have option for edit, delete and back</h3>
-    <h4>For delete we will use java script alert and if they click ok we will delete it!</h4>
-   
-}
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Details</title>
+</head>
+<body>
+    <h2>Enter Booking Details</h2>
+
+    <form method="get" asp-action="FilteredDetails" asp-controller="Booking">
+        <div class="form-group">
+            <label for="bookingType">Booking Type:</label>
+            <select class="form-control" id="bookingType" name="bookingType" required>
+                <option value="">Select Booking Type</option>
+               
+                    <option value="Flight">Flight</option>
+                <option value="Car">Car</option>
+                <option value="Hotel">Hotel</option>
+
+                
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="bookingId">Booking ID:</label>
+            <input type="text" class="form-control" id="bookingId" name="bookingId" required />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Get Details</button>
+    </form>
+</body>
+</html>

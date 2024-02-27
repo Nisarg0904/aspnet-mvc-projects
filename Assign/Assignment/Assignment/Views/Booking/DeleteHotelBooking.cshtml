@@ -1,0 +1,27 @@
+﻿@model HotelBooking
+
+@{
+    ViewData["Title"] = "Delete Car Booking";
+}
+@if (Model != null)
+{
+
+    var hotelBooking = Model as HotelBooking;
+    <p>Booking ID: @hotelBooking.booking.id</p>
+    <p>Booking Date: @hotelBooking.booking.date.ToString("yyyy-MM-dd")</p>
+    <h3>Hotel Details</h3>
+    <p>Hotel Name: @hotelBooking.hotel.name</p>
+    <p>City: @hotelBooking.hotel.city</p>
+    <p>Location: @hotelBooking.hotel.location</p>
+    <p>Check-in Date: @hotelBooking.CheckInDate.ToString("yyyy-MM-dd")</p>
+    <p>Check-out Date: @hotelBooking.CheckOutDate.ToString("yyyy-MM-dd")</p>
+    <p>Price: $@hotelBooking.booking.price</p>
+    <p>Number Of Rooms:@hotelBooking.NumRooms </p>
+    <form asp-action="DeleteHBooking" asp-controller="Booking" method="post" style="display: inline;">
+        <input type="hidden" name="bookingId" value="@hotelBooking.booking.id" />
+        <button type="submit" class="btn btn-danger">Confirm</button>
+    </form>
+    <a href="javascript:history.back()" class="btn btn-secondary">No</a>
+
+    
+}
