@@ -73,14 +73,31 @@ namespace Assignment.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            var hotel=_context.hotels.Find(id);
+            if (hotel == null) return NotFound();
 
-            return View();
+
+            return View(hotel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit()
+        public IActionResult Edit(Hotel hotel)
         {
-            return View();
+            ModelState.Remove("Name");
+            ModelState.Remove("City");
+            ModelState.Remove("Location");
+
+            if (ModelState.IsValid)
+            {
+                // Update the hotel details in the database
+                _context.hotels.Update(hotel);
+                _context.SaveChanges();
+
+                return RedirectToAction("Details", "Hotel"); // Redirect to the hotel list page
+            }
+
+            // If model state is not valid, redisplay the form with validation errors
+            return View(hotel);
         }
     }
 }

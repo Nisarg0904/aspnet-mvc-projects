@@ -53,9 +53,10 @@
         <input asp-for="amenities" class="form-control" />
         <span asp-validation-for="amenities" class="text-danger"></span>
     </div>
+    <br />
 
     <div class="form-group">
         <input type="submit" value="Add Hotel" class="btn btn-primary" />
-        <a asp-action="Index" class="btn btn-warning">Cancel</a>
+        <a asp-controller="Car" asp-action="Index" class="btn btn-warning">Cancel</a>
     </div>
 </form>
