@@ -1,6 +1,89 @@
-﻿ @{
-    ViewData["Title"] = "Privacy Policy";
+﻿@{
+    ViewData["Title"] = "About Us";
 }
+
+<style>
+    section {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3.5em;
+        font-family: 'Roboto Slab', serif;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    h2, h3 {
+        text-align: left;
+        margin-top: 50px;
+    }
+
+    p {
+        text-align: left;
+        margin-bottom: 10px;
+        max-width: 600px;
+        margin-inline-start: 0;
+        margin-inline-end: auto;
+    }
+
+        p:last-child {
+            margin-bottom: 270px;
+        }
+</style>
+
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<section>
+    <h2>Welcome to our Booking Management Website!</h2>
+
+    <p>Here's a brief guide on how to navigate through our services:</p>
+
+    <h3>Services Section</h3>
+    <p>
+        Our website is designed with two main sections: Services and Bookings.
+        In the Services section, users can access three primary categories: Hotels, Flights, and Car Rentals.
+        Within each category, users have the option to create new listings or browse existing ones.
+    </p>
+
+    <p>
+        Creating a service allows users to add and modify details such as pricing, availability dates, and capacity.
+        In the browse section, users can view all available services and perform actions like editing or deleting them (if no bookings have been made).
+    </p>
+
+    <h3>Bookings Section</h3>
+    <p>
+        Moving on to our Bookings section, users can make reservations for their desired services.
+        After selecting a service, users are prompted to apply filters or preferences to refine their search.
+        Once a suitable option is found, users provide additional booking details and confirm their reservation.
+        Upon confirmation, a unique booking ID is generated and displayed for reference.
+    </p>
+
+    <p>
+        To manage existing bookings, users can navigate to the browse section, select the relevant service, and input their booking ID.
+        From there, they can view their booking details and choose to delete the booking if desired.
+    </p>
+
+    <h3>Database and Controllers</h3>
+    <p>
+        Our database is equipped with tables to store essential data, including Cars, Hotels, Flights, Bookings, and respective booking tables for each service type.
+        For efficient management, we've implemented controllers for each service type, allowing for seamless CRUD operations on services and bookings.
+    </p>
+
+    <h3>Upcoming Features</h3>
+    <p>
+        Upcoming features include user sign-in functionality, enabling users to access and manage their past and upcoming bookings.
+        We also plan to enhance search capabilities with additional filters and introduce more service attributes for a richer user experience.
+    </p>
+
+    <p>
+        In the future, users will have the ability to consolidate different types of bookings under one reservation, enabling easy management and customization.
+        Additionally, we'll introduce editing options for bookings, allowing users to modify select details for added flexibility.
+    </p>
+
+    <p>
+        We're committed to continuously improving our platform to provide users with a seamless and comprehensive booking experience.
+    </p>
+</section>

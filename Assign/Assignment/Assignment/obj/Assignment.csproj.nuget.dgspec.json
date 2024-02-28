@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ishaj\\OneDrive\\Desktop\\comp2139-1\\Assign\\Assignment\\Assignment\\Assignment.csproj": {}
+    "C:\\Users\\danie\\Dropbox\\My PC (LAPTOP-MDL2RNB9)\\Downloads\\.Net Assignmnet1\\Assign\\Assignment\\Assignment\\Assignment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ishaj\\OneDrive\\Desktop\\comp2139-1\\Assign\\Assignment\\Assignment\\Assignment.csproj": {
+    "C:\\Users\\danie\\Dropbox\\My PC (LAPTOP-MDL2RNB9)\\Downloads\\.Net Assignmnet1\\Assign\\Assignment\\Assignment\\Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ishaj\\OneDrive\\Desktop\\comp2139-1\\Assign\\Assignment\\Assignment\\Assignment.csproj",
+        "projectUniqueName": "C:\\Users\\danie\\Dropbox\\My PC (LAPTOP-MDL2RNB9)\\Downloads\\.Net Assignmnet1\\Assign\\Assignment\\Assignment\\Assignment.csproj",
         "projectName": "Assignment",
-        "projectPath": "C:\\Users\\ishaj\\OneDrive\\Desktop\\comp2139-1\\Assign\\Assignment\\Assignment\\Assignment.csproj",
-        "packagesPath": "C:\\Users\\ishaj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ishaj\\OneDrive\\Desktop\\comp2139-1\\Assign\\Assignment\\Assignment\\obj\\",
+        "projectPath": "C:\\Users\\danie\\Dropbox\\My PC (LAPTOP-MDL2RNB9)\\Downloads\\.Net Assignmnet1\\Assign\\Assignment\\Assignment\\Assignment.csproj",
+        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\danie\\Dropbox\\My PC (LAPTOP-MDL2RNB9)\\Downloads\\.Net Assignmnet1\\Assign\\Assignment\\Assignment\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ishaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
