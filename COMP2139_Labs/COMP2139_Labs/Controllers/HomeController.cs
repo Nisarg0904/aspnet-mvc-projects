@@ -21,6 +21,19 @@ namespace COMP2139_Labs.Controllers
         {
             return View();
         }
+        public IActionResult GeneralSearch(string searchType, string searchString)
+        {
+            if (searchType == "Projects")
+            {
+                return RedirectToAction("Search", "Project", new { searchString, area = "ProjectManagement" });
+            }
+            else if (searchType == "Tasks")
+            {
+                return RedirectToAction("Search", "Task", new { searchString, area = "ProjectManagement" });
+            }
+            return RedirectToAction("Index");
+
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

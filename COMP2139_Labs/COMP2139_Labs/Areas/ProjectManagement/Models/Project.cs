@@ -1,0 +1,20 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace COMP2139_Labs.Areas.ProjectManagement.Models
+{
+    public class Project
+    {
+        internal int projectID;
+
+        public int ProjectId { get; set; }
+        [Required]
+        public required string Name { get; set; }
+        public string? Description { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime StartDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime EndDate { get; set; }
+        public string? Status { get; set; }
+        public object Tasks { get; internal set; }
+    }
+}
