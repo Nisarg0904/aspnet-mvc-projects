@@ -4,7 +4,6 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Models
 {
     public class Project
     {
-        internal int projectID;
 
         public int ProjectId { get; set; }
         [Required]
@@ -15,6 +14,6 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Models
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
         public string? Status { get; set; }
-        public object Tasks { get; internal set; }
+        public ProjectTask? Tasks { get; internal set; }
     }
 }

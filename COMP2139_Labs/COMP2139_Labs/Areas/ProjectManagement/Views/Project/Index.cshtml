@@ -29,7 +29,7 @@
                     <td>@item.Description</td>
                     <!-- Inject ViewComponent-->
                     <td>
-                        @await Component.InvokeAsync("ProjectSummary", new { projectId = item.projectID })
+                        @await Component.InvokeAsync("ProjectSummary", new { projectId = item.ProjectId })
                     </td>
                     <td>
                         <a asp-controller="Project" asp-action="Details" asp-route-id="@item.ProjectId" class="btn btn-light"><i class="fa-solid fa-info"></i></a>

@@ -10,13 +10,10 @@
         <p><i class="fa-regular fa-calendar"></i> <b>End Date: </b>@Model.EndDate.ToShortDateString()</p>
         <p><i class="fa-solid fa-signal"></i> <b>Status: </b>@Model.Status</p>
 
-        <p><i class="fa-solid fa-staff-snake"></i> <b>Tasks:</b></p>
+        <p><i class="fa-solid fa-staff-snake"></i> <b>Tasks: @Model.Tasks</b></p>
 
         <ul class="list-inline">
-            @foreach (var task in Model.Tasks)
-            {
-                <li><i class="fa-solid fa-thumbtack"></i> <b>@task.Title</b> ==> @task.Description</li>
-            }
+          
         </ul>
 
     </div>

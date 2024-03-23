@@ -17,7 +17,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Components.ProjectSummary
         {
             var project = await _context.projects
                 .Include(p => p.Tasks)
-                .FirstOrDefaultAsync(project => project.projectID == projectID);
+                .FirstOrDefaultAsync(project => project.ProjectId == projectID);
 
             if (project == null)
             {

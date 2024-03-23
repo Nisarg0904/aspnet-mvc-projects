@@ -8,142 +8,148 @@ using System.Threading.Tasks;
 
 namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 {
+    [Area("ProjectManagement")]
+    [Route("[area]/[controller]/[action]")]
+
     public class TaskController : Controller
     {
         private readonly ApplicationDbContext _context;
+
         public TaskController(ApplicationDbContext context)
         {
             _context = context;
         }
-        [HttpGet]
-        public IActionResult Index(int projectId)
+
+
+
+        [HttpGet("Index/{projectId:int?}")]
+        public async Task<IActionResult> Index(int? projectId)
         {
-            var tasks = _context.tasks.Where(t => t.ProjectId == projectId).ToList();
+            var taskQuery = _context.tasks.AsQueryable();
+
+            if (projectId.HasValue)
+            {
+                taskQuery = taskQuery.Where(t => t.ProjectId == projectId.Value);
+            }
+            var tasks = await taskQuery.ToListAsync();
             ViewBag.ProjectId = projectId;
             return View(tasks);
         }
-        [HttpGet]
-        public IActionResult Details(int id)
+
+        [HttpGet("Details/{id:int}")]
+
+        public async Task<IActionResult> Details(int id)
         {
-            var task = _context.tasks.Include(t => t.Project).FirstOrDefault(task => task.ProjectId == id);
+            var task = await _context.tasks
+                                     .Include(t => t.Project)
+                                     .FirstOrDefaultAsync(t => t.ProjectTaskId == id);
+
             if (task == null)
             {
                 return NotFound();
             }
-            return View();
+            return View(task);
+
         }
-        [HttpPost]
-        public IActionResult Create(int projectId)
+
+
+        [HttpGet("Create/{projectId:int}")]
+        public async Task<IActionResult> Create(int projectId)
         {
-            var project = _context.projects.Find(projectId);
+            var project = await _context.projects.FindAsync(projectId);
             if (project == null)
             {
                 return NotFound();
-
             }
+
             var task = new ProjectTask
             {
                 ProjectId = projectId
             };
 
-            return View();
-
-        }
-        public async Task<IActionResult> Search(int? projectId, string searchString)
-        {
-            var taskQuery = _context.tasks.AsQueryable();
-            bool searchPerformed = !string.IsNullOrEmpty(searchString);
-
-            if (projectId.HasValue)
-            {
-                taskQuery = taskQuery.Where(t => t.ProjectId == projectId);
-            }
-
-            if (searchPerformed)
-            {
-                taskQuery = taskQuery.Where(t => t.Title.Contains(searchString)
-                                              || t.Description.Contains(searchString));
-            }
-
-            var tasks = await taskQuery.ToListAsync();
-            ViewBag.ProjectId = projectId;
-            ViewData["searchPerformed"] = searchPerformed;
-            ViewData["searchString"] = searchString;
-
-            return View("Index", tasks);
+            return View(task);
 
         }
 
-        [HttpPost]
+
+        [HttpPost("Create/{projectId:int}")]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Title", "Description", "ProjectId")] ProjectTask task)
+        public async Task<IActionResult> Create([Bind("Title", "Description", "ProjectId")] ProjectTask task)
         {
             if (ModelState.IsValid)
             {
-                _context.tasks.Add(task);
-                _context.SaveChanges();
-                return RedirectToAction("Index", new { task.ProjectId });
+                await _context.tasks.AddAsync(task);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index), new { projectId = task.ProjectId });
             }
-            ViewBag.Projects = new SelectList(_context.projects, "ProjectId", "Name", task.ProjectId);
+
+            var projects = await _context.tasks.ToListAsync();
+
+            ViewBag.Projects = new SelectList(projects, "ProjectId", "Name", task.ProjectId);
             return View(task);
+
         }
-        [HttpGet]
-        public IActionResult Edit(int id)
+
+        [HttpGet("Edit/{id:int}")]
+
+        public async Task<IActionResult> Edit(int id)
         {
-            var task = _context.tasks.Include(_t => _t.Project).FirstOrDefault(t => t.ProjectTaskId == id);
+            var task = await _context.tasks
+                                     .Include(t => t.Project)
+                                     .FirstOrDefaultAsync(t => t.ProjectTaskId == id);
+
             if (task == null)
             {
                 return NotFound();
             }
-            ViewBag.Projects = new SelectList(_context.projects, "ProjectId", "Name", task.ProjectId);
+
+            var projects = await _context.projects.ToListAsync();
+
+            ViewBag.Projects = new SelectList(projects, "ProjectId", "Name", task.ProjectId);
             return View(task);
+
         }
-        [HttpPost]
+
+
+
+        [HttpPost("Edit/{id:int}")]
         [ValidateAntiForgeryToken]
 
-        public IActionResult Edit(int id, [Bind("ProjectTaskId", "Title", "Description", "ProjectId")] ProjectTask task)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectTaskId", "Title", "Description", "ProjectId")] ProjectTask task)
         {
             if (id != task.ProjectTaskId)
             {
                 return NotFound();
             }
+
+
             if (ModelState.IsValid)
             {
-                _context.tasks.Update(task);
-                _context.SaveChanges();
-                return RedirectToAction("Index", new { task.ProjectId });
-            }
-            return View();
-        }
-        [HttpGet]
-        public IActionResult Delete(int id)
-        {
-            var task = _context.tasks.Include(_t => _t.Project).FirstOrDefault(t => t.ProjectTaskId == id);
-            if (task == null)
-            {
-                return NotFound();
-            }
-            ViewBag.Projects = new SelectList(_context.projects, "ProjectId", "Name", task.ProjectId);
+                _context.Update(task);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index), new { projectId = task.ProjectId });
 
-
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        public IActionResult DeleteConfirmed(int projectTaskId)
-        {
-            var task = _context.tasks.Find(projectTaskId);
-            if (task == null)
-            {
-                _context.tasks.Remove(task);
-                _context.SaveChanges();
-                return RedirectToAction("Index", new { task.ProjectId });
             }
 
-            return NotFound();
+            var projects = await _context.projects.ToListAsync();
+
+            ViewBag.Projects = new SelectList(projects, "ProjectId", "Name", task.ProjectId);
+            return View(task);
+
 
         }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
