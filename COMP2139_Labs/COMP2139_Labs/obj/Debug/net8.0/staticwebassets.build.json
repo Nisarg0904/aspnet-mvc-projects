@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9jWlzJOBwkcxxxMZ4Dcd7qnPdE7GhaXn96rqfBSaeNs=",
+  "Hash": "zjv45L9t5mHpNTAjvOPnypuGUbqzov3oBzxH0Y3675w=",
   "Source": "COMP2139_Labs",
   "BasePath": "_content/COMP2139_Labs",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\wwwroot\\js\\projectComment.js",
+      "SourceId": "COMP2139_Labs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\wwwroot\\",
+      "BasePath": "_content/COMP2139_Labs",
+      "RelativePath": "js/projectComment.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\projectComment.js"
     },
     {
       "Identity": "C:\\Users\\nisar\\OneDrive\\Desktop\\Winter2024\\Comp2139\\git\\COMP2139_Labs\\COMP2139_Labs\\wwwroot\\js\\site.js",

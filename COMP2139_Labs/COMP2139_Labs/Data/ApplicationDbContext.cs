@@ -10,9 +10,7 @@ namespace COMP2139_Labs.Data
 
         public DbSet<Project> projects { get; set; }
         public DbSet<ProjectTask>? tasks { get; set; }
-
-
-
-
+        public DbSet<ProjectComment> comments { get; set; }
+        public IEnumerable<object> ProjectComments { get; internal set; }
     }
 }
