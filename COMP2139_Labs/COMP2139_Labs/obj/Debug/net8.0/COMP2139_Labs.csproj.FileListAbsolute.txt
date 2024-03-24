@@ -15,6 +15,10 @@ C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_L
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -38,7 +42,12 @@ C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_L
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
@@ -240,6 +249,7 @@ C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_L
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.AssemblyInfoInputs.cache
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.AssemblyInfo.cs
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.csproj.CoreCompileInputs.cache
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.RazorAssemblyInfo.cache
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.RazorAssemblyInfo.cs
