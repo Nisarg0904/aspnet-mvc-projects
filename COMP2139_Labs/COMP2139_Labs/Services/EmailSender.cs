@@ -6,18 +6,28 @@ namespace COMP2139_Labs.Services
 {
     public class EmailSender : IEmailSender
     {
-        private readonly string _sendGridKey;
+        private readonly IConfiguration _configuration;
+
         public EmailSender(IConfiguration configuration)
         {
-            _sendGridKey = configuration["SendGrid:ApiKey"];
+            _configuration = configuration;
         }
-        public async Task SendEmailAsync(string email, string subject, string htmlMessage)
+
+        public Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var client = new SendGridClient(_sendGridKey);
-            var from = new EmailAddress("101410311@georgebrown.ca","Project Collaborate");
+            return ConfigSendGridAsync(email, subject, htmlMessage);
+        }
+
+        private Task ConfigSendGridAsync(string email, string subject, string htmlMessage)
+        {
+            var apiKey = _configuration["SendGrid:ApiKey"];
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("nisarg.bhatti@georgebrown.ca", "Nisarg");
             var to = new EmailAddress(email);
-            var msg=MailHelper.CreateSingleEmail(from, to, subject,"", htmlMessage);
-            await client.SendEmailAsync(msg);
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, "", htmlMessage);
+            return client.SendEmailAsync(msg);
         }
     }
+
 }
+
