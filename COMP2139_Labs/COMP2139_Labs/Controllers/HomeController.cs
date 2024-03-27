@@ -1,4 +1,5 @@
 using COMP2139_Labs.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -22,6 +23,7 @@ namespace COMP2139_Labs.Controllers
         {
             return View();
         }
+        [Authorize]
         public IActionResult GeneralSearch(string searchType, string searchString)
         {
             if (searchType == "Projects")

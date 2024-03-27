@@ -12,14 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace COMP2139_Labs.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240327121314_emailSender")]
-    partial class emailSender
+    [Migration("20240327163657_user")]
+    partial class user
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("Identity")
                 .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -51,7 +52,27 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.ToTable("projects");
+                    b.ToTable("projects", "Identity");
+
+                    b.HasData(
+                        new
+                        {
+                            ProjectId = 1,
+                            Description = "This Is Sample...",
+                            EndDate = new DateTime(2024, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Sample Assignment",
+                            StartDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Closed"
+                        },
+                        new
+                        {
+                            ProjectId = 2,
+                            Description = "This Is Sample too...",
+                            EndDate = new DateTime(2024, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Sample Assignment 2",
+                            StartDate = new DateTime(2024, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Closed"
+                        });
                 });
 
             modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectComment", b =>
@@ -77,7 +98,7 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("comments");
+                    b.ToTable("comments", "Identity");
                 });
 
             modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectTask", b =>
@@ -101,10 +122,25 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasKey("ProjectTaskId");
 
-                    b.HasIndex("ProjectId")
-                        .IsUnique();
+                    b.HasIndex("ProjectId");
 
-                    b.ToTable("tasks");
+                    b.ToTable("tasks", "Identity");
+
+                    b.HasData(
+                        new
+                        {
+                            ProjectTaskId = 1,
+                            Description = "This Is Sample Task for Project...",
+                            ProjectId = 1,
+                            Title = "Sample Task 1"
+                        },
+                        new
+                        {
+                            ProjectTaskId = 2,
+                            Description = "This Is Sample Task for Project too...",
+                            ProjectId = 1,
+                            Title = "Sample Task 2"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -131,7 +167,7 @@ namespace COMP2139_Labs.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("Role", "Identity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -156,7 +192,7 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims", (string)null);
+                    b.ToTable("RoleClaims", "Identity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
@@ -221,7 +257,9 @@ namespace COMP2139_Labs.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("AspNetUsers", "Identity");
+
+                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -246,18 +284,16 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims", (string)null);
+                    b.ToTable("UserClaims", "Identity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -270,7 +306,7 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins", (string)null);
+                    b.ToTable("UserLogins", "Identity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -285,7 +321,7 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", (string)null);
+                    b.ToTable("UserRoles", "Identity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -294,19 +330,38 @@ namespace COMP2139_Labs.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", (string)null);
+                    b.ToTable("UserTokens", "Identity");
+                });
+
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("ProfilePic")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<int>("UserNameChangeLimit")
+                        .HasColumnType("int");
+
+                    b.ToTable("User", "Identity");
                 });
 
             modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectComment", b =>
@@ -323,8 +378,8 @@ namespace COMP2139_Labs.Migrations
             modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectTask", b =>
                 {
                     b.HasOne("COMP2139_Labs.Areas.ProjectManagement.Models.Project", "Project")
-                        .WithOne("Tasks")
-                        .HasForeignKey("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectTask", "ProjectId")
+                        .WithMany("Tasks")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -378,6 +433,15 @@ namespace COMP2139_Labs.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithOne()
+                        .HasForeignKey("COMP2139_Labs.Areas.ProjectManagement.Models.ApplicationUser", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
