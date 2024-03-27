@@ -14,6 +14,6 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Models
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
         public string? Status { get; set; }
-        public ProjectTask? Tasks { get; internal set; }
+        public List<ProjectTask> Tasks { get; set; }
     }
 }

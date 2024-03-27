@@ -20,8 +20,8 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 			_context = context;
 		}
 
-		[HttpGet]
-		public async Task<IActionResult> Index(int projectId)
+        [HttpGet("")]
+        public async Task<IActionResult> Index(int projectId)
 		{
 			var tasks = await _context.tasks
 				.Where(t => t.ProjectId == projectId)
@@ -30,8 +30,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
 			return View(tasks);
 		}
+        [HttpGet("Details/{id}")]
 
-		public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int id)
 		{
 			var task = await _context.tasks
 				.Include(t => t.Project)
@@ -43,8 +44,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 			return View(task);
 		}
 
+        [HttpGet("Create")]
 
-		public async Task<IActionResult> Create(int projectId)
+        public async Task<IActionResult> Create(int projectId)
 		{
 			var project = await _context.projects.FindAsync(projectId);
 			if (project == null)
@@ -58,8 +60,8 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 			return View(task);
 		}
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
+        [HttpPost("Create")]
+        [ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create([Bind("Title", "Description", "ProjectId")] ProjectTask task)
 		{
 			if (ModelState.IsValid)
@@ -74,8 +76,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 			ViewBag.Projects = new SelectList(projects, "ProjectId", "Name", task.ProjectId);
 			return View(task);
 		}
+        [HttpGet("Edit/{id}")]
 
-		public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(int id)
 		{
 
 			var task = await _context.tasks

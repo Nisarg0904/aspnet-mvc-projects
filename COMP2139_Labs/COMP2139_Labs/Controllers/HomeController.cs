@@ -26,11 +26,11 @@ namespace COMP2139_Labs.Controllers
         {
             if (searchType == "Projects")
             {
-                return RedirectToAction("Search", "Project", new { searchString, area = "ProjectManagement" });
+                return RedirectToAction("Search", "Project", new {area = "ProjectManagement", searchString });
             }
             else if (searchType == "Tasks")
             {
-                return RedirectToAction("Search", "Task", new { searchString, area = "ProjectManagement" });
+                return RedirectToAction("Search", "Task", new { area = "ProjectManagement", searchString });
             }
             return RedirectToAction("Index");
 

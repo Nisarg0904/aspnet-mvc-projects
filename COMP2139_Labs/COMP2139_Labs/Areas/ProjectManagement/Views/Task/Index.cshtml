@@ -48,7 +48,7 @@
 else
 {
     <p>Project has No Tasks !</p>
-    <a asp-action="Create" method="post" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+    <a asp-action="Create" asp-route-projectID="@ViewBag.ProjectID" class="btn btn-primary">Create New Task</a>
     <a asp-controller="Project" asp-action="Index" method="post" class="btn btn-secondary">Back To Projects</a>
 
 }

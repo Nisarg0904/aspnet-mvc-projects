@@ -79,6 +79,8 @@ C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_L
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\SendGrid.dll
+C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\StarkbankEcdsa.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -270,5 +272,3 @@ C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_L
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.pdb
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\COMP2139_Labs.genruntimeconfig.cache
 C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\obj\Debug\net8.0\ref\COMP2139_Labs.dll
-C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\SendGrid.dll
-C:\Users\nisar\OneDrive\Desktop\Winter2024\Comp2139\git\COMP2139_Labs\COMP2139_Labs\bin\Debug\net8.0\StarkbankEcdsa.dll

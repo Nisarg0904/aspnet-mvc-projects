@@ -98,8 +98,7 @@ namespace COMP2139_Labs.Migrations
 
                     b.HasKey("ProjectTaskId");
 
-                    b.HasIndex("ProjectId")
-                        .IsUnique();
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("tasks");
                 });
@@ -320,8 +319,8 @@ namespace COMP2139_Labs.Migrations
             modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectTask", b =>
                 {
                     b.HasOne("COMP2139_Labs.Areas.ProjectManagement.Models.Project", "Project")
-                        .WithOne("Tasks")
-                        .HasForeignKey("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectTask", "ProjectId")
+                        .WithMany("Tasks")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
