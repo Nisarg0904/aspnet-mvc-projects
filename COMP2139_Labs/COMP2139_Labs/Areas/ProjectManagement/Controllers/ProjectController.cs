@@ -74,7 +74,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
         }
 
-        [HttpGet("Edit/{id:int}")]
+        [HttpPost("Edit/{id:int}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ProjectId, Name, Description, StartDate, EndDate, Status")] Project project)
         {
@@ -83,7 +83,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
