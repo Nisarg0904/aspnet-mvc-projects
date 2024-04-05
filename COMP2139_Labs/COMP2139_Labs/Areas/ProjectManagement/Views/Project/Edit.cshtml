@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit Project";
 }
 <h2>Edit Project</h2>
-<form asp-action="Edit" method="post">
+<form  asp-action="Edit" method="post">
     @Html.HiddenFor(model => model.ProjectId)
     <div class="form-group">
         <label asp-for="Name" class="control-label"></label>
@@ -18,7 +18,7 @@
     </div>
     <br />
     <div class="form-group">
-        <a asp-action="Index" class="btn btn-primary">Done</a>
+        <button type="submit" class="btn btn-primary">Done</button>
         <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </div>
 </form>

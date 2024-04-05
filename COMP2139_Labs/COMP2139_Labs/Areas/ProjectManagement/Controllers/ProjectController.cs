@@ -83,7 +83,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
                 return NotFound();
             }
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
