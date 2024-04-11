@@ -22,16 +22,15 @@ namespace COMP2139_Labs.Data
                 FirstName = "Super",
                 LastName = "Admin",
                 EmailConfirmed = true,
-                PhoneNumberConfirmed = true,
-
+                PhoneNumberConfirmed = true
             };
 
             if(userManager.Users.All(u=>u.Id!=superUser.Id))
             {
                 var user= await userManager.FindByEmailAsync(superUser.Email);
-                if (user != null)
+                if (user == null)
                 {
-                    await userManager.CreateAsync(superUser, "p@ssword12$");
+                    await userManager.CreateAsync(superUser, "P@ssword12");
                     await userManager.AddToRoleAsync(superUser, Enum.Roles.Basic.ToString());
                     await userManager.AddToRoleAsync(superUser, Enum.Roles.Moderator.ToString());
                     await userManager.AddToRoleAsync(superUser, Enum.Roles.Admin.ToString());

@@ -76,9 +76,33 @@ namespace COMP2139_Labs.Controllers
             return View(model);
         }
 
-        private Task<IEnumerable<string>> GetUserRolesAsync(ApplicationUser user)
+        private async Task<IEnumerable<string>> GetUserRolesAsync(ApplicationUser user)
         {
-            throw new NotImplementedException();
+            return new List<string>(await _userManager.GetRolesAsync(user));
+        }
+        [HttpPost]
+        public async Task<IActionResult> Manage(List<ManageUserRolesViewModel>model, string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            { 
+                return View(); 
+            }
+            var roles = await _userManager.GetRolesAsync(user);
+            var result= await _userManager.RemoveFromRolesAsync( user, roles);
+            if(!result.Succeeded) {
+                ModelState.AddModelError("", "cannot remove user from roles");
+                return View(model);
+            }
+           result= await _userManager
+                .AddToRolesAsync(user, model.Where(x => x.Seleted).Select(y => y.RoleName));
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "Cannot add users to roles");
+                return View(model);
+                
+            }
+            return RedirectToAction("Index");
         }
     }
 }

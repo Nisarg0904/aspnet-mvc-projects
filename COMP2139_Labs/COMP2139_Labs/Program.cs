@@ -55,6 +55,8 @@ if (!app.Environment.IsDevelopment())
 
 using var scop = app.Services.CreateScope();
 var loogerFactory=scop.ServiceProvider.GetRequiredService<ILoggerFactory>();
+
+
 try
 {
     // get services needed  for role seeding

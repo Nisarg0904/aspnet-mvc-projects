@@ -134,6 +134,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvamVjdFN1bW1hcnlcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nisar/OneDrive/Desktop/Winter2024/Comp2139/git/COMP2139_Labs/COMP2139_Labs/Views/Shared/Components/UserRole/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlclJvbGVcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nisar/OneDrive/Desktop/Winter2024/Comp2139/git/COMP2139_Labs/COMP2139_Labs/Views/Shared/DisplayTemplates/DateTime.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERpc3BsYXlUZW1wbGF0ZXNcRGF0ZVRpbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -160,6 +164,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nisar/OneDrive/Desktop/Winter2024/Comp2139/git/COMP2139_Labs/COMP2139_Labs/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Winter2024/Comp2139/git/COMP2139_Labs/COMP2139_Labs/Views/UserRoles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJvbGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/Winter2024/Comp2139/git/COMP2139_Labs/COMP2139_Labs/Views/UserRoles/Manage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJvbGVzXE1hbmFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nisar/OneDrive/Desktop/Winter2024/Comp2139/git/COMP2139_Labs/COMP2139_Labs/Views/_ViewImports.cshtml]
