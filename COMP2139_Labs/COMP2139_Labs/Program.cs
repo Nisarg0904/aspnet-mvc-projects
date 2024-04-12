@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using COMP2139_Labs.Areas.ProjectManagement.Models;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,7 +42,14 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 // This ensures that whenever an IEmailSender is injected an instance of EmailSender is provided
 //builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
+// this ensure that whenever an IEmailSender is injected, our instance of Emailsender is provided
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+
+// Configure SeriLog
+builder.Host.UseSerilog((hostingContext, LoggerConfiguration)=>
+{
+    LoggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
+});
 
 var app = builder.Build();
 

@@ -13,16 +13,19 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
     public class ProjectController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<ProjectController> _logger;
 
-        public ProjectController(ApplicationDbContext context)
+        public ProjectController(ApplicationDbContext context, ILogger<ProjectController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
 
         [HttpGet("")]
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("Calling ProjectController Index() Action");
             var projects = await _context.projects.ToListAsync();
             return View(projects);
         }
@@ -32,6 +35,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         [HttpGet("Details/{id:int}")]
         public async Task<IActionResult> Details(int id)
         {
+            _logger.LogInformation("Calling ProjectController Details() Action");
+            _logger.LogDebug($"Project Details for Id: {id}");
+
             var project = await _context.projects.FirstOrDefaultAsync(p => p.ProjectId == id);
             if (project == null)
             {
