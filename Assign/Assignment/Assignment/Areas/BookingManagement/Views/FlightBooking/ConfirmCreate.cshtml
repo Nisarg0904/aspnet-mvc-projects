@@ -1,0 +1,74 @@
+﻿@using Assignment.Areas.BookingManagement.Models;
+@using Assignment.Areas.ServiceManagement.Models;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model List<Flight>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Flights</title>
+    <style>
+        .flight-container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .flight-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+            .flight-card h3 {
+                margin-top: 0;
+            }
+
+            .flight-card p {
+                margin: 5px 0;
+            }
+
+        .back-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flight-container">
+        <h2>Confirm The Booking</h2>
+
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var flight in Model)
+            {
+                <div class="flight-card">
+                    <h3>Flight Details</h3>
+                    <p><strong>Departure City:</strong> @flight.departure</p>
+                    <p><strong>Arrival City:</strong> @flight.arrival</p>
+                    <p><strong>Departure Date & Time:</strong> @flight.depTime.ToString("yyyy-MM-dd HH:mm")</p>
+                    <p><strong>Arrival Date & Time:</strong> @flight.arrTime.ToString("yyyy-MM-dd HH:mm")</p>
+                    <p><strong>Price:</strong> $@flight.price</p>
+                    <p><strong>Journey Time:</strong> @(flight.arrTime - flight.depTime)</p>
+
+                    <form asp-action="Confirmation" asp-route-flightId="@flight.id">
+                        <button type="submit" class="btn btn-primary">Book It</button>
+                        <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
+                    </form>
+                </div>
+            }
+
+        }
+        else
+        {
+            <p>No flights available.</p>
+            <br />
+            <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
+        }
+
+        <a href="#" class="back-button">Back</a>
+    </div>
+</body>
+</html>

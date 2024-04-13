@@ -1,0 +1,28 @@
+﻿@using Assignment.Areas.BookingManagement.Models;
+@using Assignment.Areas.ServiceManagement.Models;
+@model FlightBooking
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Delete Car Booking";
+}
+@if (Model != null)
+{
+    var flightBooking = Model as FlightBooking;
+    <p>Booking ID: @flightBooking.booking.id</p>
+    <p>Booking Date: @flightBooking.booking.date.ToString("yyyy-MM-dd")</p>
+
+    <h3>Flight Details</h3>
+    <p>Departure City: @flightBooking.flight.departure</p>
+    <p>Arrival City: @flightBooking.flight.arrival</p>
+    <p>Departure Date & Time: @flightBooking.flight.depTime.ToString("yyyy-MM-dd HH:mm")</p>
+    <p>Arrival Date & Time: @flightBooking.flight.arrTime.ToString("yyyy-MM-dd HH:mm")</p>
+    <p>Price: $@flightBooking.flight.price</p>
+    <form asp-action="DeleteFBooking" asp-controller="Booking" method="post" style="display: inline;">
+        <input type="hidden" name="bookingId" value="@flightBooking.booking.id" />
+        <button type="submit" class="btn btn-danger">Confirm</button>
+    </form>
+    <a href="javascript:history.back()" class="btn btn-secondary">No</a>
+
+
+}

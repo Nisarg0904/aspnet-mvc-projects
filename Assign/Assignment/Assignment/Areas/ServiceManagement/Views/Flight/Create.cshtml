@@ -1,0 +1,102 @@
+﻿@using Assignment.Areas.BookingManagement.Models;
+@using Assignment.Areas.ServiceManagement.Models;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Flight
+@{
+    ViewData["Title"] = "Create Flight";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Flight</title>
+    <style>
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 3.7em;
+            font-family: 'Merriweather', serif;
+        }
+
+        form {
+            text-align: center;
+            width: 50%;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        input[type="submit"],
+        a.btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Flight</h2>
+
+    <form asp-action="Create" method="post">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="departure" class="control-label"></label>
+            <input asp-for="departure" class="form-control" />
+            <span asp-validation-for="departure" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="depTime" class="control-label"></label>
+            <input asp-for="depTime" class="form-control" type="datetime-local" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+            <span asp-validation-for="depTime" class="text-danger"></span>
+            <small class="text-muted">Please enter the departure time in E.S.T. and after the current time.</small>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="arrival" class="control-label"></label>
+            <input asp-for="arrival" class="form-control" />
+            <span asp-validation-for="arrival" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="arrTime" class="control-label"></label>
+            <input asp-for="arrTime" class="form-control" type="datetime-local" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+            <span asp-validation-for="arrTime" class="text-danger"></span>
+            <small class="text-muted">Please enter the arrival time in E.S.T. and after the departure time.</small>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="airline" class="control-label"></label>
+            <input asp-for="airline" class="form-control" />
+            <span asp-validation-for="airline" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="price" class="control-label"></label>
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input asp-for="price" class="form-control" type="number" />
+            </div>
+            <span asp-validation-for="price" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="maxPassanger" class="control-label"></label>
+            <input asp-for="maxPassanger" class="form-control" type="number" />
+            <span asp-validation-for="maxPassanger" class="text-danger"></span>
+        </div>
+
+        <input type="hidden" asp-for="numPassanger" /> <!-- numPassenger will be 0 initially -->
+        <br />
+
+        <div class="form-group">
+            <input type="submit" value="Add Flight" class="btn btn-primary" />
+            <a asp-controller="Car" asp-action="Index" class="btn btn-warning">Cancel</a>
+        </div>
+    </form>
+</body>
+</html>

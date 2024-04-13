@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Assignment.Areas.BookingManagement.Models;
+@using Assignment.Areas.ServiceManagement.Models;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -26,10 +28,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">🤖About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="Index">📚Booking</a>
+                            <a class="nav-link text-dark" asp-area="BookingManagement" asp-controller="Booking" asp-action="Index">📚Booking</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="Index">🧳Services</a>
+                            <a class="nav-link text-dark" asp-area="ServiceManagement" asp-controller="Car" asp-action="Index">🧳Services</a>
                         </li>
                     </ul>
                 </div>

@@ -1,4 +1,5 @@
-﻿using Assignment.Models;
+﻿using Assignment.Areas.BookingManagement.Models;
+using Assignment.Areas.ServiceManagement.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Assignment.Data
