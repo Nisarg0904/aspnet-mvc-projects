@@ -32,6 +32,27 @@ namespace Assignment.Areas.BookingManagement.Controllers
                 .ToListAsync();
             return View(filteredHotels);
         }
+        [HttpGet]
+        public async Task<IActionResult> HotelSearch(string searchType, string searchString)
+        {
+            var filteredHotels = await _context.hotels.ToListAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                switch (searchType)
+                {
+                    case "Name":
+                        filteredHotels = filteredHotels.Where(h => h.name.Contains(searchString)).ToList();
+                        break;
+                    case "City":
+                        filteredHotels = filteredHotels.Where(h => h.city.Contains(searchString)).ToList();
+                        break;
+                }
+            }
+
+            return View("Create", filteredHotels);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> ConfirmCreate(int hotelId)

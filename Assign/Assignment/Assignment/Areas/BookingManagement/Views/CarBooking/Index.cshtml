@@ -12,6 +12,17 @@
 <body>
     @if (@Model.Any())
     {
+        <form class="d-flex" asp-controller="CarBooking" asp-action="CarSearch" method="get">
+            <input class="form-control" type="text" placeholder="Search" name="searchString" />
+            <select class="form-control btn btn-secondary dropdown-toggle" name="searchType">
+                <option value="Model">Model</option>
+                <option value="Type">Type</option>
+                <option value="Location">Location</option>
+                <option value="RentalCompanies">Rental Companies</option>
+            </select>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
         <form asp-action="Create" method="get">
             <div class="form-group">
                 <label for="City">City:</label>

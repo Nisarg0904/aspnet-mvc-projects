@@ -30,6 +30,34 @@ namespace Assignment.Areas.BookingManagement.Controllers
             var filteredCars = await _context.cars.Where(c => c.location == city && c.isAvailable && c.availableFrom < date).ToListAsync();
             return View(filteredCars);
         }
+        [HttpGet]
+        public async Task<IActionResult> CarSearch(string searchType, string searchString)
+        {
+            var filteredCars = await _context.cars.Where(c => c.isAvailable).ToListAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                switch (searchType)
+                {
+                    case "Model":
+                        filteredCars = filteredCars.Where(c => c.model.Contains(searchString)).ToList();
+                        break;
+                    case "Type":
+                        filteredCars = filteredCars.Where(c => c.type.Contains(searchString)).ToList();
+                        break;
+                    case "Location":
+                        filteredCars = filteredCars.Where(c => c.location.Contains(searchString)).ToList();
+                        break;
+                    case "RentalCompanies":
+                        filteredCars = filteredCars.Where(c => c.rentalCompanies.Contains(searchString)).ToList();
+                        break;
+                }
+            }
+
+            return View("Create", filteredCars);
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> ConfirmCreate(int carId)

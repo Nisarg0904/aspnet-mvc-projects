@@ -33,6 +33,30 @@ namespace Assignment.Areas.BookingManagement.Controllers
             // Pass the filtered list of flights to the view
             return View(filteredFlights);
         }
+        public async Task<IActionResult> GeneralSearch(string searchType, string searchString)
+        {
+            switch (searchType)
+            {
+                case "ArrivingCity":
+                    var filteredFlights = await _context.flights
+                        .Where(f => f.arrival.Contains(searchString))
+                        .ToListAsync();
+                    return View("Create", filteredFlights);
+                case "Destination":
+                     filteredFlights = await _context.flights
+                        .Where(f => f.departure.Contains(searchString))
+                        .ToListAsync();
+                    return View("Create", filteredFlights);
+                case "Airlines":
+                    filteredFlights = await _context.flights
+                        .Where(f => f.airline.Contains(searchString))
+                        .ToListAsync();
+                    return View("Create", filteredFlights);
+                default:
+                    return RedirectToAction("Index");
+            }
+        }
+
 
         public async Task<IActionResult> ConfirmCreate(int flightId)
         {
