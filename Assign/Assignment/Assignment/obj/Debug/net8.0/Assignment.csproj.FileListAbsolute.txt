@@ -1221,3 +1221,13 @@ C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debu
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\obj\Debug\net8.0\Assignment.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\SendGrid.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\StarkbankEcdsa.dll

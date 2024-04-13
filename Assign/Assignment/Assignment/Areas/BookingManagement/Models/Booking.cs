@@ -9,7 +9,7 @@ namespace Assignment.Areas.BookingManagement.Models
         public int id { get; set; }
         public required DateTime date { get; set; }
         public required double price { get; set; }
-        public User? user { get; set; }
+
 
     }
 }

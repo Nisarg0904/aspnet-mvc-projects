@@ -17,12 +17,92 @@ namespace Assignment.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasDefaultSchema("Identity")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Assignment.Models.Booking", b =>
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<byte[]>("ProfilePic")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<int>("UserNameChangeLimit")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("User", "Identity");
+                });
+
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.Booking", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -36,17 +116,96 @@ namespace Assignment.Migrations
                     b.Property<double>("price")
                         .HasColumnType("float");
 
-                    b.Property<int?>("userId")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
 
-                    b.HasIndex("userId");
-
-                    b.ToTable("bookings");
+                    b.ToTable("bookings", "Identity");
                 });
 
-            modelBuilder.Entity("Assignment.Models.Car", b =>
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.CarBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<DateTime>("bookedFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("bookedTo")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("carId")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("carId");
+
+                    b.ToTable("cBookings", "Identity");
+                });
+
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.FlightBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("flightId")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("flightId");
+
+                    b.ToTable("fBookings", "Identity");
+                });
+
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.HotelBooking", b =>
+                {
+                    b.Property<int>("bId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+
+                    b.Property<DateTime>("CheckInDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CheckOutDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumRooms")
+                        .HasColumnType("int");
+
+                    b.Property<int>("bookingid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("hotelId")
+                        .HasColumnType("int");
+
+                    b.HasKey("bId");
+
+                    b.HasIndex("bookingid");
+
+                    b.HasIndex("hotelId");
+
+                    b.ToTable("hBookings", "Identity");
+                });
+
+            modelBuilder.Entity("Assignment.Areas.ServiceManagement.Models.Car", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -80,39 +239,10 @@ namespace Assignment.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("cars");
+                    b.ToTable("cars", "Identity");
                 });
 
-            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
-                {
-                    b.Property<int>("bId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
-
-                    b.Property<DateTime>("bookedFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("bookedTo")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("bookingid")
-                        .HasColumnType("int");
-
-                    b.Property<int>("carId")
-                        .HasColumnType("int");
-
-                    b.HasKey("bId");
-
-                    b.HasIndex("bookingid");
-
-                    b.HasIndex("carId");
-
-                    b.ToTable("cBookings");
-                });
-
-            modelBuilder.Entity("Assignment.Models.Flight", b =>
+            modelBuilder.Entity("Assignment.Areas.ServiceManagement.Models.Flight", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -148,33 +278,10 @@ namespace Assignment.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("flights");
+                    b.ToTable("flights", "Identity");
                 });
 
-            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
-                {
-                    b.Property<int>("bId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
-
-                    b.Property<int>("bookingid")
-                        .HasColumnType("int");
-
-                    b.Property<int>("flightId")
-                        .HasColumnType("int");
-
-                    b.HasKey("bId");
-
-                    b.HasIndex("bookingid");
-
-                    b.HasIndex("flightId");
-
-                    b.ToTable("fBookings");
-                });
-
-            modelBuilder.Entity("Assignment.Models.Hotel", b =>
+            modelBuilder.Entity("Assignment.Areas.ServiceManagement.Models.Hotel", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -205,42 +312,37 @@ namespace Assignment.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("hotels");
+                    b.ToTable("hotels", "Identity");
                 });
 
-            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.Property<int>("bId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bId"));
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CheckInDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.Property<DateTime>("CheckOutDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.Property<int>("NumRooms")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<int>("bookingid")
-                        .HasColumnType("int");
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.Property<int>("hotelId")
-                        .HasColumnType("int");
-
-                    b.HasKey("bId");
-
-                    b.HasIndex("bookingid");
-
-                    b.HasIndex("hotelId");
-
-                    b.ToTable("hBookings");
+                    b.ToTable("Role", "Identity");
                 });
 
-            modelBuilder.Entity("Assignment.Models.User", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -248,29 +350,113 @@ namespace Assignment.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RoleClaims", "Identity");
                 });
 
-            modelBuilder.Entity("Assignment.Models.Booking", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Assignment.Models.User", "user")
-                        .WithMany()
-                        .HasForeignKey("userId");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Navigation("user");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserClaims", "Identity");
                 });
 
-            modelBuilder.Entity("Assignment.Models.CarBooking", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Assignment.Models.Booking", "booking")
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserLogins", "Identity");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRoles", "Identity");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("UserTokens", "Identity");
+                });
+
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.CarBooking", b =>
+                {
+                    b.HasOne("Assignment.Areas.BookingManagement.Models.Booking", "booking")
                         .WithMany()
                         .HasForeignKey("bookingid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Assignment.Models.Car", "car")
+                    b.HasOne("Assignment.Areas.ServiceManagement.Models.Car", "car")
                         .WithMany()
                         .HasForeignKey("carId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -281,15 +467,15 @@ namespace Assignment.Migrations
                     b.Navigation("car");
                 });
 
-            modelBuilder.Entity("Assignment.Models.FlightBooking", b =>
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.FlightBooking", b =>
                 {
-                    b.HasOne("Assignment.Models.Booking", "booking")
+                    b.HasOne("Assignment.Areas.BookingManagement.Models.Booking", "booking")
                         .WithMany()
                         .HasForeignKey("bookingid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Assignment.Models.Flight", "flight")
+                    b.HasOne("Assignment.Areas.ServiceManagement.Models.Flight", "flight")
                         .WithMany()
                         .HasForeignKey("flightId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -300,15 +486,15 @@ namespace Assignment.Migrations
                     b.Navigation("flight");
                 });
 
-            modelBuilder.Entity("Assignment.Models.HotelBooking", b =>
+            modelBuilder.Entity("Assignment.Areas.BookingManagement.Models.HotelBooking", b =>
                 {
-                    b.HasOne("Assignment.Models.Booking", "booking")
+                    b.HasOne("Assignment.Areas.BookingManagement.Models.Booking", "booking")
                         .WithMany()
                         .HasForeignKey("bookingid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Assignment.Models.Hotel", "hotel")
+                    b.HasOne("Assignment.Areas.ServiceManagement.Models.Hotel", "hotel")
                         .WithMany()
                         .HasForeignKey("hotelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -317,6 +503,57 @@ namespace Assignment.Migrations
                     b.Navigation("booking");
 
                     b.Navigation("hotel");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Assignment.Areas.BookingManagement.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Assignment.Areas.BookingManagement.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Assignment.Areas.BookingManagement.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Assignment.Areas.BookingManagement.Models.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
