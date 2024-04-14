@@ -19,7 +19,7 @@ namespace Assignment.Data
 
         public DbSet<FlightBooking> fBookings { get; set; }
         public DbSet<HotelBooking> hBookings { get; set; }
-        protected override void OnModelCreating(ModelBuilder builder)
+       protected override void OnModelCreating(ModelBuilder builder)
         {
 
             base.OnModelCreating(builder);
