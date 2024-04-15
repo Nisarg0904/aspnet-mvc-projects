@@ -14,14 +14,19 @@ namespace Assignment.Areas.BookingManagement.Controllers
 
         
             private readonly ApplicationDbContext _context;
+        private readonly ILogger<BookingController> _logger;    
 
-            public BookingController(ApplicationDbContext context)
+            public BookingController(ApplicationDbContext context, ILogger<BookingController> logger)
             {
                 _context = context;
+                _logger = logger;
             }
 
             public IActionResult Index()
             {
+
+            _logger.LogInformation("Calling BookingController Index() Action");
+            
                 return View();
             }
 

@@ -22,9 +22,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="BookingManagement" asp-controller="Booking" asp-action="Index">📚Booking</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="ServiceManagement" asp-controller="Car" asp-action="Index">🧳Services</a>
-                </li>
+            
                 @if (SignInMananger.IsSignedIn(User))
                 {
                     @await Component.InvokeAsync("UserRole")

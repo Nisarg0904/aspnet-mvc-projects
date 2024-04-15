@@ -6,8 +6,11 @@
             <i class="fa-solid fa-lock"></i> Admin
         </a>
         <ul class="dropdown-menu" aria-labelledby="adminDropdown">
-            <li><a class="dropdown=item" asp-area="" asp-controller="RoleManager" asp-action="Index"><i class="fa-solid fa-users-gear"></i>Role Manager</a></li>
-            <li><a class="dropdown=item" asp-area="" asp-controller="UserRoles" asp-action="Index"><i class="fa-solid fa-circle-user"></i>User Roles</a></li>
+            <li class="nav-item">
+                <a class="dropdown=item, nav-link text-dark" asp-area="ServiceManagement" asp-controller="Car" asp-action="Index">Services</a>
+            </li>
+            <li><a class="dropdown=item, nav-link text-dark" asp-area="" asp-controller="RoleManager" asp-action="Index"><i class="fa-solid fa-users-gear"></i>Role Manager</a></li>
+            <li><a class="dropdown=item, nav-link text-dark" asp-area="" asp-controller="UserRoles" asp-action="Index"><i class="fa-solid fa-circle-user"></i>User Roles</a></li>
 
         </ul>
 

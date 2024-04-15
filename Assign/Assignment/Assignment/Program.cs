@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Assignment.Services;
 using Microsoft.Extensions.DependencyInjection;
 using static System.Formats.Asn1.AsnWriter;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,8 +30,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
+// Configure SeriLog
+builder.Host.UseSerilog((hostingContext, LoggerConfiguration) =>
+{
+    LoggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
+});
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
