@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Assignment.Services;
 using Microsoft.Extensions.DependencyInjection;
+using static System.Formats.Asn1.AsnWriter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,30 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+}
+
+using var scop = app.Services.CreateScope();
+var loogerFactory = scop.ServiceProvider.GetRequiredService<ILoggerFactory>();
+
+try
+{
+    // get services needed  for role seeding
+    //scope.serviceProvider -used to access instances of registered services
+    var context = scop.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var userManager = scop.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = scop.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    //seed roles 
+    await ContextSeed.SeedRolesAsync(userManager, roleManager);
+    //seed superAdmin
+    await ContextSeed.SuperSeedRoleAsync(userManager, roleManager);
+
+
+}
+catch (Exception e)
+{
+    var logger = loogerFactory.CreateLogger<Program>();
+    logger.LogError(e, "An error occured when attempting to seed the roles for the system.");
+
 }
 app.UseHttpsRedirection();
 app.UseStaticFiles();

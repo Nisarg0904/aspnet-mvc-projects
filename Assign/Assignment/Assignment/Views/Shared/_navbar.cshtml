@@ -27,7 +27,7 @@
                 </li>
                 @if (SignInMananger.IsSignedIn(User))
                 {
-                   // @await Component.InvokeAsync("UserRole")
+                    @await Component.InvokeAsync("UserRole")
                     ;
                     <li class="nav-item d-flex align-items-center">
                         @if (UserManager.GetUserAsync(User).Result.ProfilePic != null)
