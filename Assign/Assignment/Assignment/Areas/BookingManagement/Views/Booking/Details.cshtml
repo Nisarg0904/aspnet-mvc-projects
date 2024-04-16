@@ -1,6 +1,10 @@
 ﻿@using Assignment.Areas.BookingManagement.Models;
 @using Assignment.Areas.ServiceManagement.Models;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 <!DOCTYPE html>
 <html>
@@ -36,10 +40,12 @@
                 <option value="Hotel">Hotel</option>
             </select>
         </div>
-        <div class="form-group">
-            <label for="bookingId">Booking ID:</label>
-            <input type="text" class="form-control" id="bookingId" name="bookingId" required />
-        </div>
+    
+            <div class="form-group">
+                <label for="bookingId">Booking ID:</label>
+                <input type="text" class="form-control" id="bookingId" name="bookingId" required />
+            </div>
+        
         <br />
         <button type="submit" class="btn btn-primary">Get Details</button>
         <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>

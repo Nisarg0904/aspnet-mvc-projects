@@ -10,6 +10,8 @@ namespace Assignment.Areas.BookingManagement.Models
         public required DateTime date { get; set; }
         public required double price { get; set; }
 
+        public ApplicationUser? user { get; set; }
+
 
     }
 }

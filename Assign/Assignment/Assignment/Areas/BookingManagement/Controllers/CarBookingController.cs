@@ -1,8 +1,11 @@
 ﻿using Assignment.Areas.BookingManagement.Models;
 using Assignment.Data;
 using Assignment.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Encodings.Web;
 
 namespace Assignment.Areas.BookingManagement.Controllers
 {
@@ -10,11 +13,22 @@ namespace Assignment.Areas.BookingManagement.Controllers
     [Route("[area]/[controller]/[action]")]
     public class CarBookingController : Controller
     {
+
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IEmailSender _emailSender;
+
+
         private readonly ApplicationDbContext _context;
 
-        public CarBookingController(ApplicationDbContext context)
+        public CarBookingController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager,ApplicationDbContext context , SignInManager<ApplicationUser> signInMananger, IEmailSender emailSender)
         {
             _context = context;
+            _roleManager = roleManager;
+            _userManager = userManager;
+            _signInManager = signInMananger;
+            _emailSender = emailSender;
         }
 
         [HttpGet]
@@ -74,12 +88,22 @@ namespace Assignment.Areas.BookingManagement.Controllers
             {
                 return NotFound();
             }
+           
 
-            var booking = new Booking
+             var booking = new Booking
             {
                 date = DateTime.Today,
-                price = car.price * (returnDate - pickupDate).Days,
-            };
+                price = car.price * (returnDate - pickupDate).Days
+                
+               
+             };
+            if (_signInManager.IsSignedIn(User))
+            {
+                booking.user=await _userManager.GetUserAsync(User);
+               
+            }
+
+
             _context.bookings.Add(booking);
             await _context.SaveChangesAsync();
 
@@ -95,6 +119,22 @@ namespace Assignment.Areas.BookingManagement.Controllers
             car.isAvailable = false;
 
             await _context.SaveChangesAsync();
+
+            if (booking.user != null)
+            {
+                var subject = "Car Booking Confirmation";
+                var message = $"Namaste! {booking.user.UserName},<br><br>" +
+                              $"Your car booking with {car.rentalCompanies} has been confirmed with booking id: {booking.id}. Below are the details:<br><br>" +
+                              $"Car Model: {car.model}<br>" +
+                              $"Pickup Date: {pickupDate}<br>" +
+                              $"Return Date: {returnDate}<br>" +
+                              $"Total Price: ${booking.price}<br><br>" +
+                              $"Viel dank for booking with us.";
+
+                await _emailSender.SendEmailAsync(booking.user.Email, subject, message);
+            }
+
+
 
             return View(carBooking);
         }

@@ -3,6 +3,10 @@ using Assignment.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Assignment.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using System.Dynamic;
+
 
 
 namespace Assignment.Areas.BookingManagement.Controllers
@@ -12,17 +16,27 @@ namespace Assignment.Areas.BookingManagement.Controllers
     public class BookingController : Controller
     {
 
-        
-            private readonly ApplicationDbContext _context;
-        private readonly ILogger<BookingController> _logger;    
+        private readonly ILogger<BookingController> _logger;
 
-            public BookingController(ApplicationDbContext context, ILogger<BookingController> logger)
-            {
-                _context = context;
-                _logger = logger;
-            }
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IEmailSender _emailSender;
 
-            public IActionResult Index()
+
+        private readonly ApplicationDbContext _context;
+
+        public BookingController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, ApplicationDbContext context, SignInManager<ApplicationUser> signInMananger, IEmailSender emailSender, ILogger<BookingController> logger)
+        {
+            _context = context;
+            _roleManager = roleManager;
+            _userManager = userManager;
+            _signInManager = signInMananger;
+            _emailSender = emailSender;
+            _logger = logger;
+        }
+
+        public IActionResult Index()
             {
 
             _logger.LogInformation("Calling BookingController Index() Action");
@@ -30,9 +44,10 @@ namespace Assignment.Areas.BookingManagement.Controllers
                 return View();
             }
 
-            [HttpPost]
+            [HttpPost("")]
             public async Task<IActionResult> CreateFlightBooking([Bind("Id", "flight", "date = @DateTime.Now.ToString(\"yyyy-MM-ddTHH:mm\")", "price")] FlightBooking fBooking)
             {
+
                 if (ModelState.IsValid)
                 {
                     // add new booking
@@ -64,9 +79,11 @@ namespace Assignment.Areas.BookingManagement.Controllers
             }
 
             [HttpGet]
-            public IActionResult Details(int id)
+            public async Task<IActionResult> Details(int id)
             {
-                return View();
+          
+
+            return View();
             }
 
             [HttpGet]
@@ -81,38 +98,87 @@ namespace Assignment.Areas.BookingManagement.Controllers
             {
                 return NotFound();
             }
-
-            [HttpGet]
-            public async Task<IActionResult> FilteredDetails(int bookingId, string bookingType)
+        public async Task<IActionResult> SDetails()
+        {
+            // Get the currently signed-in user
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null)
             {
-                if (bookingType.Equals("Car"))
-                {
-                    var carBooking = await _context.cBookings
-                                        .Include(cb => cb.car)
-                                        .Include(cb => cb.booking)
-                                        .FirstOrDefaultAsync(c => c.booking.id == bookingId);
-                    return View(carBooking);
-                }
-                else if (bookingType.Equals("Flight"))
-                {
-                    var flightBooking = await _context.fBookings
-                                            .Include(fb => fb.flight)
-                                            .Include(fb => fb.booking)
-                                            .FirstOrDefaultAsync(f => f.booking.id == bookingId);
-
-                    return View(flightBooking);
-                }
-                else
-                {
-                    var hotelBooking = await _context.hBookings
-                                            .Include(hb => hb.hotel)
-                                            .Include(hb => hb.booking)
-                                            .FirstOrDefaultAsync(h => h.booking.id == bookingId);
-                    return View(hotelBooking);
-                }
+                // Handle if the user is not signed in
+                return RedirectToAction("Login", "Account"); // Redirect to login page
             }
 
-            [HttpGet]
+            // Fetch all bookings associated with the current user
+            var userBookings = await _context.bookings
+                .Include(b => b.user)
+                .Where(b => b.user == currentUser)
+                .ToListAsync();
+
+            return View(userBookings);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FilteredDetails(int bookingId, string bookingType)
+        {
+           
+                switch (bookingType)
+                {
+                    case "Car":
+                        var carBooking = await _context.cBookings
+                            .Include(cb => cb.car)
+                            .Include(cb => cb.booking)
+                            .FirstOrDefaultAsync(cb => cb.booking.id == bookingId);
+                        return View("filteredDetails", carBooking);
+                    case "Flight":
+                        var flightBooking = await _context.fBookings
+                            .Include(fb => fb.flight)
+                            .Include(fb => fb.booking)
+                            .FirstOrDefaultAsync(fb => fb.booking.id == bookingId);
+                        return View("filteredDetails", flightBooking);
+                    case "Hotel":
+                        var hotelBooking = await _context.hBookings
+                            .Include(hb => hb.hotel)
+                            .Include(hb => hb.booking)
+                            .FirstOrDefaultAsync(hb => hb.booking.id == bookingId);
+                        return View("filteredDetails", hotelBooking);
+                case "user":
+                     carBooking = await _context.cBookings
+                            .Include(cb => cb.car)
+                            .Include(cb => cb.booking)
+                            .FirstOrDefaultAsync(cb => cb.booking.id == bookingId);
+                    if(carBooking == null)
+                    {
+                         flightBooking = await _context.fBookings
+                            .Include(fb => fb.flight)
+                            .Include(fb => fb.booking)
+                            .FirstOrDefaultAsync(fb => fb.booking.id == bookingId);
+                        if(flightBooking == null)
+                        {
+                             hotelBooking = await _context.hBookings
+                            .Include(hb => hb.hotel)
+                            .Include(hb => hb.booking)
+                            .FirstOrDefaultAsync(hb => hb.booking.id == bookingId);
+                            return View("filteredDetails", hotelBooking);
+
+                        }
+                        return View("filteredDetails", flightBooking);
+
+
+                    }
+                    return View("filteredDetails", carBooking);
+
+
+                default:
+                        // Handle unknown booking type
+                        return RedirectToAction("Index", "Home");
+                
+            }
+            }
+        
+
+
+
+        [HttpGet]
             public async Task<IActionResult> DeleteCarBooking(int bookingId)
             {
                 var carBooking = await _context.cBookings

@@ -1,6 +1,9 @@
 ﻿using Assignment.Areas.BookingManagement.Models;
+using Assignment.Areas.ServiceManagement.Models;
 using Assignment.Data;
 using Assignment.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,11 +14,21 @@ namespace Assignment.Areas.BookingManagement.Controllers
     [Route("[area]/[controller]/[action]")]
     public class FlightBookingController : Controller
     {
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IEmailSender _emailSender;
+
+
         private readonly ApplicationDbContext _context;
 
-        public FlightBookingController(ApplicationDbContext context)
+        public FlightBookingController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, ApplicationDbContext context, SignInManager<ApplicationUser> signInMananger, IEmailSender emailSender)
         {
             _context = context;
+            _roleManager = roleManager;
+            _userManager = userManager;
+            _signInManager = signInMananger;
+            _emailSender = emailSender;
         }
         public async Task<IActionResult> Index()
         {
@@ -82,6 +95,12 @@ namespace Assignment.Areas.BookingManagement.Controllers
                 price = flight.price
                 // Set other properties as needed
             };
+            if (_signInManager.IsSignedIn(User))
+            {
+                booking.user = await _userManager.GetUserAsync(User);
+
+            }
+
             _context.bookings.Add(booking);
             await _context.SaveChangesAsync();
 
@@ -98,6 +117,19 @@ namespace Assignment.Areas.BookingManagement.Controllers
             flight.numPassanger++;
 
             await _context.SaveChangesAsync();
+            if (booking.user != null)
+            {
+                var subject = "Car Booking Confirmation";
+                var message = $"Namaste! {booking.user.UserName},<br><br>" +
+                              $"Your Flight with {flight.airline} booking has been confirmed with booking id: {booking.id}. Below are the details:<br><br>" +
+                              $"From: {flight.departure}<br>" +
+                              $"To: {flight.arrival}<br>" +
+                              $"{flight.depTime.ToString("yyyy-MM-dd HH:mm")} --> {flight.arrTime.ToString("yyyy-MM-dd HH:mm")} [Note: The Time is the local Time of Place You are Going!]<br>" +
+                              $"Total Price: ${booking.price}<br><br>" +
+                              $"Viel dank for booking with us.";
+
+                await _emailSender.SendEmailAsync(booking.user.Email, subject, message);
+            }
 
             // Redirect to the confirmation view
             return View(flightBooking);

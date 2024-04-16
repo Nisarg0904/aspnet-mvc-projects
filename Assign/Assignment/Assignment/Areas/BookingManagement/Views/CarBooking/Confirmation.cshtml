@@ -1,5 +1,11 @@
 ﻿@using Assignment.Areas.BookingManagement.Models;
 @using Assignment.Areas.ServiceManagement.Models;
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @model CarBooking
@@ -13,6 +19,21 @@
     <h2>Booking Confirmation</h2>
 
     <p>Booking ID: @Model.booking.id</p>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        var user = await UserManager.GetUserAsync(User);
+        var userName = await UserManager.GetUserNameAsync(user);
+        var email = await UserManager.GetEmailAsync(user);
+        <p>Name: @userName</p>
+        <p>Email Confirmation Has Been Send To Email: @email </p>
+    }
+    else
+    {
+        <p>Name: Guest User! [Sign In Required!]</p>
+    }
+
+        
+    
     <p>Booking Date: @Model.booking.date.ToString("yyyy-MM-dd")</p>
 
     <h3>Car Details</h3>
