@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6fBckIEt3OSwuIJnnGJuSERhwjSLJWoY9suybMdltlQCBcJIA5xbYKarQe6XxsdzifpyXqr7/BAXbR6EH1zaww==",
+  "dgSpecHash": "Q4jwGlE/kTWgWOXVeKT7kbjlNeyJogcf+V862PpGXKq4WH4plzgIXHujYEU9pCdsCP0IgGKZ6YBISN96E8Lq4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder (2)\\Assign\\Assignment\\Assignment\\Assignment.csproj",
+  "projectFilePath": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder\\Assign\\Assignment\\Assignment\\Assignment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nisar\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\nisar\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

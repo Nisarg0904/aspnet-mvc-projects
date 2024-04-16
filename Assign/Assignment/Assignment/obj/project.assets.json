@@ -4090,11 +4090,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder (2)\\Assign\\Assignment\\Assignment\\Assignment.csproj",
+      "projectUniqueName": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder\\Assign\\Assignment\\Assignment\\Assignment.csproj",
       "projectName": "Assignment",
-      "projectPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder (2)\\Assign\\Assignment\\Assignment\\Assignment.csproj",
+      "projectPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder\\Assign\\Assignment\\Assignment\\Assignment.csproj",
       "packagesPath": "C:\\Users\\nisar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder (2)\\Assign\\Assignment\\Assignment\\obj\\",
+      "outputPath": "C:\\Users\\nisar\\OneDrive\\Desktop\\New folder\\Assign\\Assignment\\Assignment\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
