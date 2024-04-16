@@ -1,5 +1,14 @@
 using Assignment.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Net.NetworkInformation;
+using Assignment.Areas.BookingManagement.Models;
+using Assignment.Areas.ServiceManagement.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Assignment.Services;
+using Microsoft.Extensions.DependencyInjection;
+using static System.Formats.Asn1.AsnWriter;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,18 +18,67 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+})
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultUI()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+
+// Configure SeriLog
+builder.Host.UseSerilog((hostingContext, LoggerConfiguration) =>
+{
+    LoggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
+});
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+
+using var scop = app.Services.CreateScope();
+var loogerFactory = scop.ServiceProvider.GetRequiredService<ILoggerFactory>();
+
+try
+{
+    // get services needed  for role seeding
+    //scope.serviceProvider -used to access instances of registered services
+    var context = scop.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var userManager = scop.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = scop.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    //seed roles 
+    await ContextSeed.SeedRolesAsync(userManager, roleManager);
+    //seed superAdmin
+    await ContextSeed.SuperSeedRoleAsync(userManager, roleManager);
+
+
+}
+catch (Exception e)
+{
+    var logger = loogerFactory.CreateLogger<Program>();
+    logger.LogError(e, "An error occured when attempting to seed the roles for the system.");
+
+}
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.MapRazorPages();
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Booking}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

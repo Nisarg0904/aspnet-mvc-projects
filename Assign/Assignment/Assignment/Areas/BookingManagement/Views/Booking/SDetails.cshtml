@@ -1,0 +1,32 @@
+﻿@model List<Booking> // Replace YourNamespace.Models.Booking with your actual Booking model namespace
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var userName = await UserManager.GetUserNameAsync(user);
+<h1>Bookings History For @userName</h1>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.id</td>
+                <td>@booking.date</td>
+                <td>@booking.price</td>
+                <td>
+                    <a asp-action="FilteredDetails" asp-route-bookingType="user" asp-route-bookingId="@booking.id" class="btn btn-primary">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

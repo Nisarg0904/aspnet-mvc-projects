@@ -1,0 +1,58 @@
+﻿@using Assignment.Areas.BookingManagement.Models;
+@using Assignment.Areas.ServiceManagement.Models;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model List<Car>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Search</title>
+</head>
+<body>
+    @if (@Model.Any())
+    {
+        <form class="d-flex" asp-controller="CarBooking" asp-action="CarSearch" method="get">
+            <input class="form-control" type="text" placeholder="Search" name="searchString" />
+            <select class="form-control btn btn-secondary dropdown-toggle" name="searchType">
+                <option value="Model">Model</option>
+                <option value="Type">Type</option>
+                <option value="Location">Location</option>
+                <option value="RentalCompanies">Rental Companies</option>
+            </select>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <form asp-action="Create" method="get">
+            <div class="form-group">
+                <label for="City">City:</label>
+                <select class="form-control" id="City" name="City">
+                    @foreach (var City in Model.Select(c => c.location).Distinct())
+                    {
+                        <option value="@City">@City</option>
+                    }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date" name="date" min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
+        </div>
+
+        <br />
+
+        <button type="submit" class="btn btn-primary">Search</button>
+            <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
+        </form>
+    }
+    else
+    {
+        <p>NO Cras Avilable</p>
+        <br />
+        <a asp-action="Index" asp-controller="Booking" class="btn btn-secondary">Cancel</a>
+
+    }
+
+
+</body>
+</html>

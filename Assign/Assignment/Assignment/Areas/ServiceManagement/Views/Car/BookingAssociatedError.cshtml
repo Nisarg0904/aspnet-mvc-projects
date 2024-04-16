@@ -1,0 +1,16 @@
+﻿@using Assignment.Areas.BookingManagement.Models;
+@using Assignment.Areas.ServiceManagement.Models;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <script>
+        alert('There are bookings associated with this car. Cannot delete.');
+        window.history.back();
+    </script>
+</body>
+</html>

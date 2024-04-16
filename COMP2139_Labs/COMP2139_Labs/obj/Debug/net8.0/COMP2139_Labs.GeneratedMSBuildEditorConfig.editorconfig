@@ -1,87 +1,187 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = COMP2139_Labs
 build_property.RootNamespace = COMP2139_Labs
-build_property.ProjectDir = C:\Users\danie\Dropbox\My PC (LAPTOP-MDL2RNB9)\Downloads\.Net Assignment.1\COMP2139_Labs\COMP2139_Labs\
+build_property.ProjectDir = C:\Users\nisar\OneDrive\Desktop\New folder\COMP2139_Labs\COMP2139_Labs\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\danie\Dropbox\My PC (LAPTOP-MDL2RNB9)\Downloads\.Net Assignment.1\COMP2139_Labs\COMP2139_Labs
+build_property.MSBuildProjectDirectory = C:\Users\nisar\OneDrive\Desktop\New folder\COMP2139_Labs\COMP2139_Labs
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Home/About.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Project/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Project/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Project/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Project/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Project/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcUHJvamVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Task/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcVGFza1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Task/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcVGFza1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Task/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcVGFza1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Task/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcVGFza1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/Task/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcVGFza1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Areas/ProjectManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdE1hbmFnZW1lbnRcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Home/Index.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Project/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxDcmVhdGUuY3NodG1s
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/RoleManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZU1hbmFnZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Project/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxEZWxldGUuY3NodG1s
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/Components/ProjectSummary/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvamVjdFN1bW1hcnlcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Project/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxEZXRhaWxzLmNzaHRtbA==
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/Components/UserRole/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlclJvbGVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Project/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxFZGl0LmNzaHRtbA==
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/DisplayTemplates/DateTime.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERpc3BsYXlUZW1wbGF0ZXNcRGF0ZVRpbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Project/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Shared/Error.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/_footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/_header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9oZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/_navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Task/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDcmVhdGUuY3NodG1s
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/UserRoles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJvbGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Task/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xEZWxldGUuY3NodG1s
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/UserRoles/Manage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclJvbGVzXE1hbmFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Task/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Task/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Task/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/_ViewImports.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/_ViewStart.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danie/Dropbox/My PC (LAPTOP-MDL2RNB9)/Downloads/.Net Assignment.1/COMP2139_Labs/COMP2139_Labs/Views/Shared/_Layout.cshtml]
+[C:/Users/nisar/OneDrive/Desktop/New folder/COMP2139_Labs/COMP2139_Labs/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lr0o506bqa

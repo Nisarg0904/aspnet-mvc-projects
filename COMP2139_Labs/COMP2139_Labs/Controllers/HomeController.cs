@@ -1,4 +1,5 @@
 using COMP2139_Labs.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,6 +8,7 @@ namespace COMP2139_Labs.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,6 +22,20 @@ namespace COMP2139_Labs.Controllers
         public IActionResult About()
         {
             return View();
+        }
+        [Authorize]
+        public IActionResult GeneralSearch(string searchType, string searchString)
+        {
+            if (searchType == "Projects")
+            {
+                return RedirectToAction("Search", "Project", new {area = "ProjectManagement", searchString });
+            }
+            else if (searchType == "Tasks")
+            {
+                return RedirectToAction("Search", "Task", new { area = "ProjectManagement", searchString });
+            }
+            return RedirectToAction("Index");
+
         }
 
 
