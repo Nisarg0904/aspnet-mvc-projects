@@ -957,6 +957,9 @@ C:\Users\nisar\OneDrive\Desktop\New folder (2)\Assign\Assignment\Assignment\obj\
 C:\Users\nisar\OneDrive\Desktop\New folder (2)\Assign\Assignment\Assignment\obj\Debug\net8.0\Assignment.pdb
 C:\Users\nisar\OneDrive\Desktop\New folder (2)\Assign\Assignment\Assignment\obj\Debug\net8.0\Assignment.genruntimeconfig.cache
 C:\Users\nisar\OneDrive\Desktop\New folder (2)\Assign\Assignment\Assignment\obj\Debug\net8.0\ref\Assignment.dll
+<<<<<<< HEAD
+=======
+>>>>>>> 29ba4feb1ba960d7ba416275905ead7b9a5bb36a
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\appsettings.json
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Assignment.staticwebassets.runtime.json
@@ -1041,6 +1044,15 @@ C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debu
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\NuGet.Versioning.dll
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\SendGrid.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Sinks.File.dll
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\SQLitePCLRaw.core.dll
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -1256,12 +1268,3 @@ C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\obj\Debu
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\obj\Debug\net8.0\Assignment.pdb
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\obj\Debug\net8.0\Assignment.genruntimeconfig.cache
 C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\obj\Debug\net8.0\ref\Assignment.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.AspNetCore.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Sinks.Console.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
-C:\Users\nisar\OneDrive\Desktop\New folder\Assign\Assignment\Assignment\bin\Debug\net8.0\Serilog.Sinks.File.dll
